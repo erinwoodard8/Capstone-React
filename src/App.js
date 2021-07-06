@@ -20,6 +20,8 @@ function App() {
 
         <h3>Hello world Franky</h3>
         <h3>Hello world Deepshikha</h3>
+        <h1>1st day of movie app</h1>
+
       </header>
     </div>
   );
