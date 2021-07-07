@@ -10,6 +10,8 @@ const Signup = () => {
     //will post the new user to the backend DB
 
     return(
-        <div></div>
+        <div><h1>This is the Signup component</h1></div>
     )
-}
+};
+
+export default Signup
