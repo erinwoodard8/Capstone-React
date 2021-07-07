@@ -11,18 +11,25 @@ const Login = () => {
 
   const render = () => {
     if (state) {
-      return <Signup></Signup>;
+      return <Signup>Register</Signup>;
     } else {
-      return <h1>Button was NOT clicked</h1>
+      return <h1>This is login page</h1>
     }
   };
 
   return (
     <div>
-      <button onClick={() => setState(true)}>Click me</button>
+      <input type="email" className="email" placeholder="example@example.com" />
+       <div className="login">
+       <br></br>
+      <input type="password" className="password" placeholder="Enter password" />
+      </div>
+      <br></br>
+      <button onClick={() => setState(true)}>LogIn</button>
       {render()}
-    </div>
+      </div>
   );
 };
 
 export default Login;
+
