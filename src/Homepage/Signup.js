@@ -4,13 +4,6 @@ import React, { useState } from "react";
 const Signup = () => {
     const [state, setState] = useState(false);
 
-    const render = () => {
-        if (state) {
-          return <Signup>Register</Signup>;
-        } else {
-          return <h1>This is signup page</h1>
-        }
-      };
 
     //will have option for user to signup for google
     //or allow user to enter a email, username, password
@@ -31,8 +24,8 @@ const Signup = () => {
         <input type="password" className="password" placeholder="Enter password" />
         </div>
         <br></br>
-        <button onClick={() => setState(true)}>LogIn</button>
-        {render()}
+        <button >Register</button>
+        
         </div>
     )
 };
