@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import  "../styles/common.css";
+import MyflixLogo from "../static/MyflixLogo4.png";
 
 const Login = () => {
   const [state, setState] = useState(false);
@@ -18,16 +19,29 @@ const Login = () => {
   // };
 
   return (
-    <div>
-      <input type="email" className="email" placeholder="example@example.com" />
-       <div className="login">
-       <br></br>
-      <input type="password" className="password" placeholder="Enter password" />
-      </div>
-      <br></br>
-      <button >LogIn</button>
+    
+     
+
+    <div id="loginform">
+
       
+      <div className="image" >
+      <img  src={MyflixLogo} alt="Logo" />
       </div>
+
+     
+
+
+      <div id="button" className="row" >
+      <button >Sign in with Google</button>
+      </div>
+
+      
+      
+    
+
+  
+  </div>
   );
 };
 
