@@ -1,28 +1,14 @@
 import React, { useState } from "react";
+import { Navbar } from "react-bootstrap";
 import "../styles/common.css";
-import MyflixLogo from "../static/MyflixLogo4.png";
+import MyflixLogo4 from "../static/MyflixLogo4.png";
 import "../styles/login.css";
 
 const Login = () => {
-  // const [state, setState] = useState(false);
-
-  //have login fields email and password
-  //allow to login with google
-  //once login/authorized, page will render movie search
-  //have a link to allow user to signup
-
-  // const render = () => {
-  //   if (state) {
-  //     return <Signup>Register</Signup>;
-  //   } else {
-  //     return <h1>This is login page</h1>
-  //   }
-  // };
-
-  return (
+  return (    
     <div id="loginform">
       <div className="image">
-        <img src={MyflixLogo} alt="Logo" />
+        <img src={MyflixLogo4} alt="Logo" />
       </div>
 
       <a

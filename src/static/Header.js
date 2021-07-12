@@ -15,7 +15,8 @@ const Header = () => {
   <Navbar collapseOnSelect expand="lg" className="nav" variant="dark">
   
 
-  <img class= "logo-image" src={MyflixLogo4} class="img-fluid" width="50" alt="Bootstrappin'"/>
+  <img class="logo-image" src={MyflixLogo4} class="img-fluid" width="50" alt="Bootstrappin'"/>
+
 
    {/* <Navbar bg="primary" variant="dark" className="myflix" >MyFlix</Navbar> */}
 
