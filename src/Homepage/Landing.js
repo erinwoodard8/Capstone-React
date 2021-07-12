@@ -59,7 +59,7 @@ const Landing = () => {
 
     return(
         <div>
-            <Header state={authState} />
+            <Header />
             {authState ? <Test /> : <Login />}
         </div>
     )

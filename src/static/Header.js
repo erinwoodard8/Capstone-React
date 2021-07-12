@@ -1,7 +1,7 @@
 import {Navbar} from 'react-bootstrap';
 import React from "react";
 import MyflixLogo4 from "./MyflixLogo4.png";
-import "../"
+import "../styles/header.css"
 
 
 
