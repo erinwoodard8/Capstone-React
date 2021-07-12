@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/common.css";
+import "../styles/header.css";
 import MyflixLogo from "../static/MyflixLogo4.png";
 import "../styles/login.css";
 
