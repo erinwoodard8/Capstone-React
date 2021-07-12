@@ -13,7 +13,7 @@ const Test = () => {
     }, [])
 
 
-    //not actually using this right now, using post response instead
+    //not actually using this right now, using post response
     const getUser = () => {
         fetch("http://localhost:8080/users/login", {
             method: "GET",

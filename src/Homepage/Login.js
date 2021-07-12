@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import  "../styles/common.css";
+import "../styles/common.css";
 import MyflixLogo from "../static/MyflixLogo4.png";
+import "../styles/login.css";
 
 const Login = () => {
-  const [state, setState] = useState(false);
+  // const [state, setState] = useState(false);
 
   //have login fields email and password
   //allow to login with google
@@ -19,25 +20,21 @@ const Login = () => {
   // };
 
   return (
-    
-     
     <div id="loginform">
-      
-      <div className="image" >
-      <img  src={MyflixLogo} alt="Logo" />
-      </div>
-     
-      <div id="button" className="row" >
-      <button >Sign in with Google</button>
+      <div className="image">
+        <img src={MyflixLogo} alt="Logo" />
       </div>
 
-           
-    
-
-  
-  </div>
+      <a
+        className="button-link"
+        href="http://localhost:8080/oauth2/authorization/google"
+      >
+        <div id="button" className="row">
+          <button>Sign in with Google</button>
+        </div>
+      </a>
+    </div>
   );
 };
 
 export default Login;
-

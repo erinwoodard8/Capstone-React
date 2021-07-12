@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
 
 body{
-  background: rgb(14,49,80);
-background: linear-gradient(90deg, rgba(14,49,80,1) 0%, rgba(109,201,200,1) 47%, rgba(247,233,227,1) 100%);
+  /* background: rgb(14,49,80); */
+  background: linear-gradient(
+    90deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+/* background: linear-gradient(90deg, rgba(14,49,80,1) 0%, rgba(109,201,200,1) 47%, rgba(247,233,227,1) 100%); */
   font-family: "work sans";
   }
 
 
-#loginform{
+/* #loginform{
   max-width: 500px;
   min-width: 300px;
   max-height: 1000px;
@@ -19,19 +24,19 @@ background: linear-gradient(90deg, rgba(14,49,80,1) 0%, rgba(109,201,200,1) 47%,
   box-shadow: 2px 2px 6px rgba(0,0,0,.3);
   transition: box-shadow 500ms, background 1s;
   
-}
+} */
 
 
-.image > img {
+/* .image > img {
     max-width: 100%;
     max-height: 50%;
     display:inline-block;
     align-self: center;
-    /* margin-bottom: 20%;
-    margin-top: 20%; */
+    margin-bottom: 20%;
+    margin-top: 20%;
  
-}
-.row{
+} */
+/* .row{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,12 +44,12 @@ background: linear-gradient(90deg, rgba(14,49,80,1) 0%, rgba(109,201,200,1) 47%,
   padding-bottom: 1rem;
   padding-left: 4 rem;
   padding-right: 4 rem;
-    /* max-width: 100%; */
-}
+    max-width: 100%;
+} */
 
 
 
-.row button{
+/* .row button{
   border-radius: 25px;
   width: 80%;
   height: 40px;
@@ -57,16 +62,16 @@ background: linear-gradient(90deg, rgba(14,49,80,1) 0%, rgba(109,201,200,1) 47%,
   cursor: pointer;
   transition: opacity 0.25s ease-out;
 
-}
+} */
 
-.row button:hover{
+/* .row button:hover{
   opacity: 0.8;
 }
 
 #button{
   padding-bottom: 4.5rem;
   
-}
+} */
 
 
 
