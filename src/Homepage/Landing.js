@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Login from './Login';
 import Test from '../test';
 import Header from '../static/Header';
-import MyflixLogo4 from "../static/MyflixLogo4.png";
+
 
 
 
