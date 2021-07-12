@@ -1,5 +1,6 @@
 import {Navbar, Form, Nav, Button, FormControl} from 'react-bootstrap';
 import React from "react";
+import MyflixLogo4 from "./MyflixLogo4.png";
 
 
 
@@ -11,10 +12,11 @@ const Header = () => {
   return (
    
 <div>
-  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Navbar collapseOnSelect expand="lg" className="nav" variant="dark">
   
-   <Navbar.Brand className="text-center" href="#home">Logo Here</Navbar.Brand>
-      
+
+  <img class= "logo-image" src={MyflixLogo4} class="img-fluid" width="50" alt="Bootstrappin'"/>
+
    {/* <Navbar bg="primary" variant="dark" className="myflix" >MyFlix</Navbar> */}
 
 

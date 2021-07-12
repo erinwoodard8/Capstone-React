@@ -21,23 +21,17 @@ const Login = () => {
   return (
     
      
-
     <div id="loginform">
-
       
       <div className="image" >
       <img  src={MyflixLogo} alt="Logo" />
       </div>
-
      
-
-
       <div id="button" className="row" >
       <button >Sign in with Google</button>
       </div>
 
-      
-      
+           
     
 
   
