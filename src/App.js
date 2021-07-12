@@ -4,7 +4,6 @@ import {Switch, Route } from "react-router-dom";
 import Login from '../src/Homepage/Login.js';
 import Signup from '../src/Homepage/Signup';
 import Test from './test';
-import Navbar from './static/Header';
 import Header from './static/Header';
 import Landing from './Homepage/Landing.js';
 

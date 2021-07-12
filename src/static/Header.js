@@ -1,6 +1,7 @@
-import {Navbar, Form, Nav, Button, FormControl} from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 import React from "react";
 import MyflixLogo4 from "./MyflixLogo4.png";
+import "../"
 
 
 
