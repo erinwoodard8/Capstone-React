@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/common.css";
+// import "../styles/common.css";
 import MyflixLogo4 from "../static/MyflixLogo4.png";
 import "../styles/login.css";
 
