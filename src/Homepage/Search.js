@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/search.css";
-import { Form, FormControl, Button } from "react-bootstrap";
+
 const Search = () => {
   async function getMovie() {
     let title = "hobbit";
@@ -32,8 +32,9 @@ const Search = () => {
           id="searchBar"
           placeholder="Search for a Movie Title..."
         />
-        <button onClick={getMovie} type="button" className="submitButt" onclick="search()">
-          Search
+         
+        <button onClick={getMovie} type="button" className="submitButt" onclick="search()" >
+        <i class="fa fa-search"></i>
         </button>
       </div>
     </div>
