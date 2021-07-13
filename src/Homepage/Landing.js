@@ -30,11 +30,11 @@ const Landing = () => {
         });
     }
 
-    // const authView = () => {
-    //     if(!authState == false) {
-    //         return setViewState("test");
-    //     }
-    // }
+    const authView = () => {
+        if(!authState == false) {
+            return setViewState("test");
+        }
+    }
 
     console.log(authState);
 
