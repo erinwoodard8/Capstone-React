@@ -1,0 +1,13 @@
+
+/* this is for th navbar */
+.nav{
+    background-color: #0e3150;
+  }
+  
+  .logo-image{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+  }
