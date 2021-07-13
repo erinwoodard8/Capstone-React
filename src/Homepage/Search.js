@@ -34,7 +34,7 @@ const Search = () => {
     const movieInfo = await movieResponse.json();
     const newMovieState = movieInfo;
     setMovieState(newMovieState);
-    console.log(await movieInfo);
+    console.log(await movieState);
   }
 
   console.log("TITLESTATE: " + titleState);
@@ -49,12 +49,29 @@ const Search = () => {
           onChange={handleChange}
           // value={titleState}
         />
-
-        <h1>TITLE:</h1><h1>{movieState.title}</h1>
-        <button onClick={getMovie} type="button" className="submitButt">
-         <i class="fa fa-search"></i>
-
-        </button>
+            <button onClick={getMovie} type="button" className="submitButt">
+                <i class="fa fa-search"></i>
+            </button>
+        {/* <form>
+        <h1>Title:</h1><h1>{movieState.title} </h1>
+            <div>
+                <h3>Image:</h3> <img src={movieState.image} />
+                <h3>Runtime:</h3> <h3> {movieState.runtimeMins} </h3> 
+                <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
+                <h3>Award:</h3> <h3>{movieState.awards}</h3>  
+                <h3>Year:</h3> <h3>{movieState.year} </h3>
+            </div> 
+        </form> */}
+        <form>
+        <h1>Title: {movieState.title} </h1>
+            <div className= "displayInfo">
+                <img className="img1" src={movieState.image} width="800" height="800"/>  
+                <h3>Year: {movieState.year} | Runtime: {movieState.runtimeMins} Minutes </h3> 
+                <h3>Award:{movieState.awards}</h3>
+                <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
+            </div> 
+        </form>
+        
       </div>
     </div>
   );
