@@ -6,6 +6,7 @@ import Signup from '../src/Homepage/Signup';
 import Test from './test';
 import Header from './static/Header';
 import Landing from './Homepage/Landing.js';
+import Search from './Homepage/Search';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         {/* <Header></Header> */}
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/search" component={Search} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/test" component={Test} />
