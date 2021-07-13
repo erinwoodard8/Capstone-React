@@ -1,25 +1,40 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 .textBox{
- 
     text-align: center;
     padding-top: 10rem;
    font-family: Georgia, serif;
 }
-
-
 #searchBar{
     text-align: center;
     font-size: 25px;
+    padding: 25px;
+    width: 50%;
     height: 80px;
-    width: 500px;
-    
- 
-   
+    border-color:#4b4969;
+    outline: none;
 }
 .submitButt{
     height: 80px;
     width: 100px;
     font-size: 25px;
     background-color:#FFC0C2;
+    margin-left: 10px;
+    padding: 7px;
+    border: none;
 }
+
+.img1{
+      float : left;
+  }
+
+.displayInfo::after {
+    border: 3px solid #0e3150 ;
+    padding: 5px;
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+
