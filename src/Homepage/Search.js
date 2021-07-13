@@ -33,11 +33,12 @@ const Search = () => {
     );
     const movieInfo = await movieResponse.json();
     const newMovieState = movieInfo;
-    setMovieState(newMovieState);
-    console.log(await movieInfo);
+    await setMovieState(newMovieState);
+    // console.log(await movieState.toString());
   }
 
   console.log("TITLESTATE: " + titleState);
+  
 
   return (
     <div>
