@@ -1,0 +1,25 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.textBox{
+ 
+    text-align: center;
+    padding-top: 10rem;
+   font-family: Georgia, serif;
+}
+
+
+#searchBar{
+    text-align: center;
+    font-size: 25px;
+    height: 80px;
+    width: 500px;
+    
+ 
+   
+}
+.submitButt{
+    height: 80px;
+    width: 100px;
+    font-size: 25px;
+    background-color:#FFC0C2;
+}
