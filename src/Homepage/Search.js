@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/search.css";
-import { Form, FormControl, Button } from "react-bootstrap";
+
 const Search = () => {
 
   const [movieState, setMovieState] = useState({});
@@ -40,7 +40,8 @@ const Search = () => {
 
         <h1>TITLE:</h1><h1>{movieState.title}</h1>
         <button onClick={getMovie} type="button" className="submitButt">
-          Search
+         <i class="fa fa-search"></i>
+
         </button>
       </div>
     </div>
