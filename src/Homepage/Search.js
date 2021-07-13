@@ -11,11 +11,11 @@ const Search = () => {
     console.log(event.target.value);
   }
   
-
+// IF THE RESPONSE IS NULL YOU NEED TO USE A DIFFERENT API KEY BECAUSE OF THE REQUEST LIMIT (k_2whi6r49 OR k_sf4k7xi2 OR k_7mrq9eci)
   async function getMovie() {
     let title = titleState;
     const idResponse = await fetch(
-      "https://imdb-api.com/en/API/SearchMovie/k_2whi6r49/" + title,
+      "https://imdb-api.com/en/API/SearchMovie/k_sf4k7xi2/" + title,
       {
         method: "GET",
       }
@@ -26,7 +26,7 @@ const Search = () => {
     console.log((await "MOVIE ID: ") + movieId);
 
     const movieResponse = await fetch(
-      "https://imdb-api.com/en/API/Title/k_2whi6r49/" + movieId,
+      "https://imdb-api.com/en/API/Title/k_sf4k7xi2/" + movieId,
       {
         method: "GET",
       }
