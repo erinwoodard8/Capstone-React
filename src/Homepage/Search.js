@@ -15,7 +15,7 @@ const Search = () => {
   async function getMovie() {
     let title = titleState;
     const idResponse = await fetch(
-      "https://imdb-api.com/en/API/SearchMovie/k_sf4k7xi2/" + title,
+      "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
       {
         method: "GET",
       }
@@ -26,7 +26,7 @@ const Search = () => {
     console.log((await "MOVIE ID: ") + movieId);
 
     const movieResponse = await fetch(
-      "https://imdb-api.com/en/API/Title/k_sf4k7xi2/" + movieId,
+      "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
       {
         method: "GET",
       }
@@ -53,6 +53,8 @@ const Search = () => {
             <button onClick={getMovie} type="button" className="submitButt">
                 <i class="fa fa-search"></i>
             </button>
+
+            
         {/* <form>
         <h1>Title:</h1><h1>{movieState.title} </h1>
             <div>
@@ -63,7 +65,7 @@ const Search = () => {
                 <h3>Year:</h3> <h3>{movieState.year} </h3>
             </div> 
         </form> */}
-        <form>
+        {/* <form>
         <h1>Title: {movieState.title} </h1>
             <div className= "displayInfo">
                 <img className="img1" src={movieState.image} width="800" height="800"/>  
@@ -71,9 +73,32 @@ const Search = () => {
                 <h3>Award:{movieState.awards}</h3>
                 <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
             </div> 
-        </form>
+        </form> */}
+          <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-md-12 align-left">
+            <br></br>
+            <br></br>
+              <br></br>
+            <h1>Title: {movieState.title} </h1>
+                <h3 >Year: {movieState.year} | Runtime: {movieState.runtimeMins} Minutes </h3> 
+                <h3 className="align-left">Award:{movieState.awards}</h3>
+                <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
+            </div>
+            <div class="col-lg-5 col-md-12 col-12">
+            <br></br>
+            <br></br>
+            <br></br>
+              
+
+            <img className="img1" src={movieState.image} width="auto" height="800">  
+                  </img>
+            </div>
+        </div>
+    </div>
         
       </div>
+      
     </div>
   );
 };

@@ -1,12 +1,9 @@
-import React from "react";
 // import "../styles/common.css";
 import MyflixLogo4 from "../static/MyflixLogo4.png";
 import "../styles/login.css";
 import videos from "../styles/videos.mp4";
-
-
 const Login = () => {
-  return (    
+  return (
     <div id="loginform">
       <video autoPlay loop muted={true} height="150px" width="300px">
         <source src={videos} type="video/mp4"/>
@@ -25,5 +22,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
