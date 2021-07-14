@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Login from './Login';
-import Test from '../test';
+// import Test from '../test';
+import Search from './Search';
 import Header from '../static/Header';
 
 
@@ -30,37 +31,17 @@ const Landing = () => {
         });
     }
 
-    const authView = () => {
-        if(!authState == false) {
-            return setViewState("test");
-        }
-    }
-
     console.log(authState);
 
-     
-
-    // const renderView = () => {
-
-    //     if(authState) {
-    //        setViewState("test");
-    //     }
-
-    //     switch(viewState) {
-    //         case "login":
-    //             return(<Login />)
-    //         case "test":
-    //             return <div></div>   
-    //     }
-    // }
+    
 
 
 
 
     return(
         <div>
-            <Header />
-            {authState ? <Test /> : <Login />}
+            {authState ? <Header /> : <div></div>}
+            {authState ? <Search />  : <Login />}
         </div>
     )
 
