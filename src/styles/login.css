@@ -9,6 +9,7 @@
   height: 70%;
   margin: 100px auto;
   background-color: #0e3150;
+  background-color: black;
   border-radius: 25px;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
   transition: box-shadow 500ms, background 1s;
@@ -61,4 +62,9 @@
 
 #button {
   padding-bottom: 4.5rem;
+}
+
+video {
+  display: flex;
+  margin: auto;
 }
