@@ -24,7 +24,6 @@ const Search = () => {
   async function getMovie() {
     let title = titleState;
     const idResponse = await fetch(
-
       "https://imdb-api.com/en/API/SearchMovie/k_2whi6r49/" + title,
       {
         method: "GET",
@@ -127,25 +126,42 @@ const Search = () => {
             <button onClick={getMovie} type="button" className="submitButt">
                 <i class="fa fa-search"></i>
             </button>
-        {/* <form>
-        <h1>Title:</h1><h1>{movieState.title} </h1>
-            <div>
-                <h3>Image:</h3> <img src={movieState.image} />
-                <h3>Runtime:</h3> <h3> {movieState.runtimeMins} </h3> 
-                <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
-                <h3>Award:</h3> <h3>{movieState.awards}</h3>  
-                <h3>Year:</h3> <h3>{movieState.year} </h3>
-            </div> 
-        </form> */}
+        
         <form>
-        <h1>Title: {movieState.title} </h1>
-            <div className= "displayInfo">
-                <img className="img1" src={movieState.image} width="800" height="800"/>  
-                <h3>Year: {movieState.year} | Runtime: {movieState.runtimeMins} Minutes </h3> 
-                <h3>Award:{movieState.awards}</h3>
-                <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
-            </div> 
+              <br></br>
+              <br></br>
+              <div className="container-fluid" >
+                    <div className= "row">
+                      <div className="col-md-1"></div>
+                        
+                        <div id="imageBg" className="col-md-3 card p-2 border-right-0 img-responsive center-block d-block mx-auto">
+                            <img className="img-fluid" width="80%" src={movieState.image} /> 
+                        </div>
+
+                        <div id="textColor" className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "  >  
+                            <p className="movieTitle">{movieState.title} </p>
+                            <p className="time"> {movieState.year} | {movieState.runtimeMins} min </p>
+                            
+                            <div><h2>Award:</h2>
+                                  <h4>{movieState.awards}</h4>
+                                  <br></br> 
+                                  <h2> Plot: </h2>
+                                  <h4>{movieState.plot}</h4>
+                            </div>
+                            <button type="button" class="btn btn-warning">Add to favorite </button>
+                        </div>
+
+                      <div className="col-md-1"></div>    
+                    </div> 
+              </div>
         </form>
+
+          {/* testing part start */}
+
+          
+
+          {/* testing part end */}
+
         
       </div>
 

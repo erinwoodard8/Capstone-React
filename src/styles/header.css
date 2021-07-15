@@ -5,6 +5,7 @@
 
 .nav{
     background-color: #0e3150;
+    
   }
 
 .nav-link{
@@ -12,7 +13,6 @@
   font-size: 26px;
   margin-left:50px;
   /* font-family: 'Oleo Script Swash Caps', cursive; */
-  /* font-weight: bolder; */
   font-family: 'Domine', serif;
 
 }
@@ -23,8 +23,6 @@ a.nav-link:hover
   -ms-transform: scale(1,1.3); /* IE 9 */
   transform: scale(1,1.3); /* Standard syntax */
   color: #0e3150 !important;
-
-  
 }
 
 .hamburger {
