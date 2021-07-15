@@ -11,14 +11,14 @@ const Login = () => {
       <video autoPlay loop muted={true} height="150px" width="300px">
         <source src={videos} type="video/mp4"/>
       </video>
-      <div className="image">
+      <div className="imageLogo" >
         <img src={MyflixLogo4} alt="Logo" />
       </div>
       <a
         className="button-link"
         href="http://localhost:8080/oauth2/authorization/google"
       >
-        <div id="button" className="row">
+        <div id="buttonSign" className="rowLogin">
           <button>Sign in with Google</button>
         </div>
       </a>
