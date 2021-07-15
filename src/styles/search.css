@@ -34,7 +34,9 @@
   }
 
 #imageBg {
-    background-color:#0e3150;
+    /* background-color:#0e3150; */
+    background-color: transparent;
+    border: none;
     color: #FFC0C2;
     font-family: 'Domine', serif;
 
