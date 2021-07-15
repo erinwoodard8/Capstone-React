@@ -9,7 +9,7 @@ const Header = () => {
   const [userState, setUserState] = useState({});
 
   useEffect(() => {
-    postUser();
+    // postUser();
   }, []);
   
   const postUser = () => {
