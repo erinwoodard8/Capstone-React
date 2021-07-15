@@ -22,7 +22,7 @@ a.nav-link:hover
   background-color: #FFC0C2;
   -ms-transform: scale(1,1.3); /* IE 9 */
   transform: scale(1,1.3); /* Standard syntax */
-  color: #0E3150 !important;
+  color: #0e3150 !important;
 }
 
 .hamburger {
@@ -31,7 +31,8 @@ a.nav-link:hover
 
 .user:hover {
   cursor: default !important ;
-}
+ 
+ }
 
   
   .logo-image{
@@ -41,3 +42,4 @@ a.nav-link:hover
     overflow: hidden;
     margin-top: -6px;
   }
+
