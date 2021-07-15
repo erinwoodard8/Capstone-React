@@ -1,4 +1,4 @@
-.card {
+.card-container {
     display: flex;
     max-width: 600px;
     min-width:250px;
