@@ -1,0 +1,18 @@
+.card-container {
+    display: flex;
+    max-width: 600px;
+    min-width:250px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top:50px;
+    align-items: center;
+    border-radius:5%;
+    background-color:rgba(0,0,0,.7);
+    color: #FFC0C2; 
+}
+
+.card-image{
+    height:300px;
+    width:200px;
+    margin-top:20px;
+}

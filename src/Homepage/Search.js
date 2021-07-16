@@ -1,17 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/search.css";
 
 const Search = () => {
 
   const [movieState, setMovieState] = useState({});
   const [titleState, setTitleState] = useState("");
+  const [userState, setUserState] = useState({id:"", username:"", email:"", favoriteMovies:[""]});
+
 
   const handleChange =(event) => {
     setTitleState(event.target.value);
     console.log(event.target.value);
   }
+
+  useEffect(() => {
+    // console.log(movieState);
+    
+    getUser();
   
-// IF THE RESPONSE IS NULL YOU NEED TO USE A DIFFERENT API KEY BECAUSE OF THE REQUEST LIMIT (k_2whi6r49 OR k_sf4k7xi2 OR k_7mrq9eci)
+  }, [])
+  
+// IF THE RESPONSE IS NULL YOU NEED TO USE A DIFFERENT API KEY BECAUSE OF THE REQUEST LIMIT (k_2whi6r49 OR k_sf4k7xi2 OR k_7mrq9eci OR k_q83az6pl)
   async function getMovie() {
     let title = titleState;
     const idResponse = await fetch(
@@ -23,7 +32,7 @@ const Search = () => {
     const movie = await idResponse.json();
     const movieId = await movie.results[0].id;
     console.log(await movie);
-    console.log((await "MOVIE ID: ") + movieId);
+    console.log(("MOVIE ID: ") + movieId);
 
     const movieResponse = await fetch(
       "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
@@ -33,9 +42,73 @@ const Search = () => {
     );
     const movieInfo = await movieResponse.json();
     const newMovieState = movieInfo;
-    await setMovieState(newMovieState);
-    // console.log(await movieState.toString());
+    setMovieState(newMovieState);
   }
+
+  async function getUser() {
+    const response = await fetch("http://localhost:8080/users/login", {
+      method: "GET",
+      credentials: "include",
+    });
+    const user = await response.json();
+    const newUserState = user;
+    console.log(newUserState);
+    setUserState(await newUserState);
+    //above works
+  }
+  
+  async function saveMovie() {
+    const movieId = movieState.id;
+    console.log(movieId);
+    let user = userState;
+    if(user.favoriteMovies == null) {
+    user.favoriteMovies=[movieId];
+    } else {
+      user.favoriteMovies.push(movieId);
+    }
+    // console.log(user.favoriteMovies);
+
+    const response = await fetch("http://localhost:8080/users/favorites", {
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await response.json();
+    console.log("POSTUSER" + json);
+    console.log(user.favoriteMovies);
+  }
+
+
+
+
+
+  // async function getFavorites() {
+  //   const response = await fetch("http://localhost:8080/users/login", {
+  //     method: "GET",
+  //     credentials: "include",
+  //   });
+  //   const user = await response.json();
+  //   await user.favoriteMovies.push(movieState.id);
+  //   await setUserState(user);
+  //   console.log("USERSTATE: " +  JSON.stringify(user));
+
+  //   console.log(await userState.favoriteMovies);
+
+    
+  //   const postResponse = await fetch("http://localhost:8080/post/google", {
+  //       method: "POST",
+  //       body: JSON.stringify(userState),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //   });
+    // const json = await postResponse.json();
+    // console.log(await "POSTUSER: " + JSON.stringify(json));
+  // }
+
 
   console.log("TITLESTATE: " + titleState);
   
@@ -53,52 +126,47 @@ const Search = () => {
             <button onClick={getMovie} type="button" className="submitButt">
                 <i class="fa fa-search"></i>
             </button>
-
-            
-        {/* <form>
-        <h1>Title:</h1><h1>{movieState.title} </h1>
-            <div>
-                <h3>Image:</h3> <img src={movieState.image} />
-                <h3>Runtime:</h3> <h3> {movieState.runtimeMins} </h3> 
-                <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
-                <h3>Award:</h3> <h3>{movieState.awards}</h3>  
-                <h3>Year:</h3> <h3>{movieState.year} </h3>
-            </div> 
-        </form> */}
-        {/* <form>
-        <h1>Title: {movieState.title} </h1>
-            <div className= "displayInfo">
-                <img className="img1" src={movieState.image} width="800" height="800"/>  
-                <h3>Year: {movieState.year} | Runtime: {movieState.runtimeMins} Minutes </h3> 
-                <h3>Award:{movieState.awards}</h3>
-                <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
-            </div> 
-        </form> */}
-          <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-6 col-md-12 align-left">
-            <br></br>
-            <br></br>
+        
+        <form>
               <br></br>
-            <h1>Title: {movieState.title} </h1>
-                <h3 >Year: {movieState.year} | Runtime: {movieState.runtimeMins} Minutes </h3> 
-                <h3 className="align-left">Award:{movieState.awards}</h3>
-                <h3>Plot:</h3> <h3>{movieState.plot} </h3> 
-            </div>
-            <div class="col-lg-5 col-md-12 col-12">
-            <br></br>
-            <br></br>
-            <br></br>
-              
+              <br></br>
+              <div className="container-fluid" >
+                    <div className= "row">
+                      <div className="col-md-1"></div>
+                        
+                        <div id="imageBg" className="col-md-3 card p-2 border-right-0 img-responsive center-block d-block mx-auto">
+                            <img className="img-fluid" width="80%" src={movieState.image} /> 
+                        </div>
 
-            <img className="img1" src={movieState.image} width="auto" height="800">  
-                  </img>
-            </div>
-        </div>
-    </div>
+                        <div id="textColor" className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "  >  
+                            <p className="movieTitle">{movieState.title} </p>
+                            <p className="time"> {movieState.year} | {movieState.runtimeMins} min </p>
+                            
+                            <div><h2>Award:</h2>
+                                  <h4>{movieState.awards}</h4>
+                                  <br></br> 
+                                  <h2> Plot: </h2>
+                                  <h4>{movieState.plot}</h4>
+                            </div>
+                            <button type="button" class="btn btn-warning">Add to favorite </button>
+                        </div>
+
+                      <div className="col-md-1"></div>    
+                    </div> 
+              </div>
+        </form>
+
+          {/* testing part start */}
+
+          
+
+          {/* testing part end */}
+
         
       </div>
-      
+
+      {/* <button onClick={getUser}>GET USER</button> */}
+      <button onClick={saveMovie}>SAVE MOVIE</button>
     </div>
   );
 };

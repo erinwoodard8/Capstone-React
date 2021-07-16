@@ -1,9 +1,10 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
 
 .textBox{
     text-align: center;
-    padding-top: 10rem;
-   font-family: Georgia, serif;
+    padding-top: 5rem;
+    font-family: Georgia, serif;
 }
 #searchBar{
     text-align: center;
@@ -24,10 +25,6 @@
     border: none;
 }
 
-.img1{
-      float : left;
-  }
-
 .displayInfo::after {
     border: 3px solid #0e3150 ;
     padding: 5px;
@@ -35,6 +32,38 @@
     clear: both;
     display: table;
   }
+
+#imageBg {
+    /* background-color:#0e3150; */
+    background-color: transparent;
+    border: none;
+    color: #FFC0C2;
+    font-family: 'Domine', serif;
+
+}
+
+#textColor {
+    background-color:#0e3150;
+    color: #FFC0C2;
+    font-family: 'Domine', serif;
+}
+
+.movieTitle {
+    font-size: 50px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+
+.time{
+    font-size: 17px;
+    margin-top: 0%;
+    padding-top: 0%;
+}
+
+.displayInfo{
+    font-size: 30px;
+
+} 
 
 
 
