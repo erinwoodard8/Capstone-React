@@ -8,6 +8,7 @@ import Header from './static/Header';
 import Landing from './Homepage/Landing.js';
 import Search from './Homepage/Search';
 import Favorites from './Favorites/Favorites';
+import Search1 from './Homepage/Search1';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/test" component={Test} />
+        <Route exact path="/search1" component={Search1} />
       </Switch>
     
     </div>

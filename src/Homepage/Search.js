@@ -24,7 +24,7 @@ const Search = () => {
   async function getMovie() {
     let title = titleState;
     const idResponse = await fetch(
-      "https://imdb-api.com/en/API/SearchMovie/k_2whi6r49/" + title,
+      "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
       {
         method: "GET",
       }
@@ -35,7 +35,7 @@ const Search = () => {
     console.log(("MOVIE ID: ") + movieId);
 
     const movieResponse = await fetch(
-      "https://imdb-api.com/en/API/Title/k_2whi6r49/" + movieId,
+      "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
       {
         method: "GET",
       }
