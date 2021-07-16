@@ -139,7 +139,15 @@ const Search = () => {
                         </div>
 
                         <div id="textColor" className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "  >  
-                            <p className="movieTitle">{movieState.title} </p>
+                        <div className="row">
+                          <div className="col-10">
+                            <p className="movieTitle">{movieState.title} </p> 
+                          </div>
+                          <div className="col-2">
+                            <button type="button" class="btn btn-warning">Add to favorite </button>
+                          </div>
+                        </div>
+                            
                             <p className="time"> {movieState.year} | {movieState.runtimeMins} min </p>
                             
                             <div><h2>Award:</h2>
@@ -148,7 +156,7 @@ const Search = () => {
                                   <h2> Plot: </h2>
                                   <h4>{movieState.plot}</h4>
                             </div>
-                            <button type="button" class="btn btn-warning">Add to favorite </button>
+                            {/* <button type="button" class="btn btn-warning">Add to favorite </button> */}
                         </div>
 
                       <div className="col-md-1"></div>    

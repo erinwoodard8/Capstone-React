@@ -62,9 +62,12 @@
 
 #buttonSign {
   padding-bottom: 4.5rem;
+  /* outline: none; */
 }
 
 video {
   display: flex;
   margin: auto;
 }
+
+button:focus { outline: none; }
