@@ -9,6 +9,7 @@ import Landing from './Homepage/Landing.js';
 import Search from './Homepage/Search';
 import Favorites from './Favorites/Favorites';
 
+
 function App() {
   return (
     <div className="App">

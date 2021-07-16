@@ -65,5 +65,22 @@
 
 } 
 
+i.material-icons.md-favorite {
+    background-color: #0E3150;
+    color: white;
+}
 
+.iconBtn {
+    background-color: #0E3150;
+    border-color: white;
+}
 
+i.material-icons.md-favorite:hover {
+    background-color: #0E3150;
+    color: white;
+}
+
+.iconBtn:hover {
+    background-color: #0E3150;
+    border-color: white;
+}

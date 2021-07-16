@@ -70,4 +70,6 @@ video {
   margin: auto;
 }
 
-button:focus { outline: none; }
+button:focus { 
+  outline: none; 
+}

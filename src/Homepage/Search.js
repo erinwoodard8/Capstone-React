@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/search.css";
 
+
 const Search = () => {
 
   const [movieState, setMovieState] = useState({});
@@ -24,7 +25,7 @@ const Search = () => {
   async function getMovie() {
     let title = titleState;
     const idResponse = await fetch(
-      "https://imdb-api.com/en/API/SearchMovie/k_2whi6r49/" + title,
+      "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
       {
         method: "GET",
       }
@@ -35,7 +36,7 @@ const Search = () => {
     console.log(("MOVIE ID: ") + movieId);
 
     const movieResponse = await fetch(
-      "https://imdb-api.com/en/API/Title/k_2whi6r49/" + movieId,
+      "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
       {
         method: "GET",
       }
@@ -138,13 +139,15 @@ const Search = () => {
                             <img className="img-fluid" width="80%" src={movieState.image} /> 
                         </div>
 
-                        <div id="textColor" className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "  >  
+                        <div id="textColor" className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto " >  
                         <div className="row">
                           <div className="col-10">
                             <p className="movieTitle">{movieState.title} </p> 
                           </div>
                           <div className="col-2">
-                            <button type="button" class="btn btn-warning">Add to favorite </button>
+                            <button type="button" class="btn btn-warning iconBtn">
+                              <i class="material-icons md-favorite"></i>
+                            </button>
                           </div>
                         </div>
                             
@@ -156,7 +159,6 @@ const Search = () => {
                                   <h2> Plot: </h2>
                                   <h4>{movieState.plot}</h4>
                             </div>
-                            {/* <button type="button" class="btn btn-warning">Add to favorite </button> */}
                         </div>
 
                       <div className="col-md-1"></div>    
