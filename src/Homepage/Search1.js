@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/search1.css";
 import { Row,Col, Container } from "react-bootstrap";
 import MovieCard from "../Favorites/MovieCard";
+import Header from "../static/Header";
 
 const Search1 = () => {
   const [results, setResultsState] = useState([]);
@@ -52,19 +53,21 @@ const Search1 = () => {
   return (
     
         <div>
-          <div className="textBox">
-            <input
-              type="text"
-              id="searchBar"
-              placeholder="Search for a Movie Title..."
-              onChange={handleChange}
-            />
-            <button onClick={getMovie} type="button" className="submitButt">
-              <i class="fa fa-search"></i>
-            </button>
-
+          <Header />
+            <div className="textBox">
+                <input
+                  type="text"
+                  id="searchBar"
+                  placeholder="Search for a Movie Title..."
+                  onChange={handleChange}
+                />
+                <button onClick={getMovie} type="button" className="submitButt">
+                  <i class="fa fa-search"></i>
+                </button>
+            </div>
+          
             {/* display movie list start */}
-            <Container id="movieDisplay" fluid={true}>
+            {/* <Container id="movieDisplay" >
               <Row>
               {results.map((movie) => (
                     <Col md="3">
@@ -72,20 +75,28 @@ const Search1 = () => {
                     </Col>
                   ))}
               </Row>
-            </Container>
+            </Container> */}
 
 
+                {/* test start */}
+                  <div>
+                    <Container  flex={true} >
+                        <Row className="row justify-content-md-center">
+                          
+                              {results.map((movie) => (
+                              <Col className="justify-content-md-center width" >
+                                <MovieCard movie={movie} />
+                              </Col>
+                              ))}
+                              <Col></Col>
+                          
+                        </Row>
+                    </Container>
+                  </div>
+            
+                {/* test end */}
 
-              {/* <div className="container-fluid" >
-                  {results.map((movie) => (
-                    <div>
-                      <MovieCard movie={movie} />
-                    </div>
-                  ))}
-              </div> */}
-            {/* display movie list end*/}
-
-          </div>
+          
         </div>
   );
 };
