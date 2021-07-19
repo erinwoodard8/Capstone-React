@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
    
-<div>
+<div className="header-container">
   {/* <Navbar collapseOnSelect expand="lg" className="nav" variant="dark">
   
   
@@ -48,7 +48,6 @@ const Header = () => {
       <Nav.Link href="/favorites">Favorites</Nav.Link>
       <Nav.Link className="user">Logged in as: {userState.username}</Nav.Link>
       <Nav.Link href="http://localhost:8080/logout">Logout</Nav.Link>
-      
     </Nav>
     
   </Navbar.Collapse>
