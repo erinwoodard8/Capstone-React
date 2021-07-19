@@ -1,17 +1,15 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../static/Header";
-import MovieCard from "./MovieCard";
-import '../styles/favorites.css';
+import MovieCard from "../static/MovieCard";
+import "../styles/favorites.css";
+import { Row, Col, Container } from "react-bootstrap";
 
 const Favorites = () => {
-  const [favoriteState, setFavoriteState] = useState([]);
   const [listState, setListState] = useState([]);
-//   const [movieState, setMovieState] = useState({})
 
-  useEffect(()=> {
+  useEffect(() => {
     getFavorites();
-    console.log(listState);
-  }, [listState])  
+  }, []);
 
   async function getFavorites() {
     const response = await fetch("http://localhost:8080/users/login", {
@@ -19,52 +17,49 @@ const Favorites = () => {
       credentials: "include",
     });
     const user = await response.json();
-    let favorites = favoriteState;
-    favorites = user.favoriteMovies;
-    setFavoriteState(favorites);
-  }
+    let favorites = user.favoriteMovies;
 
-
-
- 
-  async function createList() {
     let movieList = [];
-      for(let i = 0; i < favoriteState.length; i++) {
-          const response = await fetch("https://imdb-api.com/en/API/Title/k_7mrq9eci/" + favoriteState[i],{
-              method: "GET",
-          })
-            const movie = await response.json();
-            movieList.push(movie);
-      }
-       setListState(movieList);
+    console.log(favorites);
+    for (let i = 0; i < favorites.length; i++) {
+      const response = await fetch(
+        "https://imdb-api.com/en/API/Title/k_q83az6pl/" + favorites[i],
+        {
+          method: "GET",
+        }
+      );
+      const movie = await response.json();
+      movieList.push(movie);
+    }
+    setListState(movieList);
   }
-
-//   async function renderCards() {
-//       let movieList = await createList();
-//       console.log(movieList.length);
-//       for(let i = 0; i < movieList.length; i++) {  
-//         console.log(movieList[i].title);
-//       }
-//   }
-
-  
-
-
-
+  console.log(listState);
 
   return (
     <div>
-      <Header />
-
-      {/* <button onClick={getFavorites}>Click</button> */}
-      {/* {renderCards()} */}
-      <div className="container">
-        {listState.map(movie => {
-            return <MovieCard movie={movie} />
-        })}
-      </div>  
-      <button onClick={createList}>Loop</button>
-    </div>
+    <Header />    
+    <Container flex={true}>
+      {listState.length % 3 == 0 ? (
+        <Row className="row justify-content-md-center">
+          {listState.map((movie) => (
+            <Col className="justify-content-md-center">
+              <MovieCard movie={movie} />
+            </Col>
+          ))}
+      
+        </Row>
+      ) : (
+        <Row className="row justify-content-md-center">
+          {listState.map((movie) => (
+            <Col className="justify-content-md-center">
+              <MovieCard movie={movie} />
+            </Col>
+          ))}
+          <Col></Col>
+        </Row>
+      )}
+    </Container>
+  </div>
   );
 };
 

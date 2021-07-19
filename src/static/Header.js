@@ -32,26 +32,25 @@ const Header = () => {
   return (
    
 <div>
-  {/* <Navbar collapseOnSelect expand="lg" className="nav" variant="dark">
   
-  
-  <img class="logo-image" src={MyflixLogo4} class="img-fluid" width="50" alt="Bootstrappin'"/>
-
-  </Navbar> */}
-
-<Navbar className="nav" expand="lg">
+<Navbar  className="nav" expand="lg">
   <Navbar.Brand href="/"><img class="logo-image" src={MyflixLogo4} class="img-fluid" width="50"/></Navbar.Brand>
-  <Navbar.Toggle className="hamburger" aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
+    <Navbar.Toggle className="hamburger" aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">
+      <Nav>
       <Nav.Link href="/">Search</Nav.Link>
       <Nav.Link href="/favorites">Favorites</Nav.Link>
       <Nav.Link className="user">Logged in as: {userState.username}</Nav.Link>
-      <Nav.Link href="http://localhost:8080/logout">Logout</Nav.Link>
-      
     </Nav>
-    
-  </Navbar.Collapse>
+    </Navbar.Collapse>
+    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+      <Nav>
+        <Navbar.Text>
+              <Nav.Link href="http://localhost:8080/logout">Logout</Nav.Link>
+      </Navbar.Text>
+      </Nav>
+      
+    </Navbar.Collapse>
 </Navbar>
 </div>
 

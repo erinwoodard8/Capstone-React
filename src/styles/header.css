@@ -4,26 +4,25 @@
 /* maybe use sans-serif for large text such as links and headings */
 
 .nav{
-    background-color: #0e3150;
-    
+    background-color: #0e3150; 
   }
 
-.nav-link{
+.nav-link {
   color: #FFC0C2  !important;
   font-size: 26px;
   margin-left:50px;
-  /* font-family: 'Oleo Script Swash Caps', cursive; */
   font-family: 'Domine', serif;
 
 }
 
-a.nav-link:hover
-{
+a.nav-link:hover:not(.user) {
   background-color: #FFC0C2;
   -ms-transform: scale(1,1.3); /* IE 9 */
   transform: scale(1,1.3); /* Standard syntax */
   color: #0e3150 !important;
+  /* height: 9.5vh !important; */
 }
+
 
 .hamburger {
   background-color:#FFC0C2  !important;
@@ -31,7 +30,6 @@ a.nav-link:hover
 
 .user:hover {
   cursor: default !important ;
- 
  }
 
   
@@ -42,4 +40,5 @@ a.nav-link:hover
     overflow: hidden;
     margin-top: -6px;
   }
+  
 
