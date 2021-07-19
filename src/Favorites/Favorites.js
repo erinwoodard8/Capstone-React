@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Header from "../static/Header";
-import MovieCard from "./MovieCard";
+import MovieCard from "../static/MovieCard";
 import "../styles/favorites.css";
+import { Row, Col, Container } from "react-bootstrap";
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
@@ -22,7 +23,7 @@ const Favorites = () => {
     console.log(favorites);
     for (let i = 0; i < favorites.length; i++) {
       const response = await fetch(
-        "https://imdb-api.com/en/API/Title/k_7mrq9eci/" + favorites[i],
+        "https://imdb-api.com/en/API/Title/k_q83az6pl/" + favorites[i],
         {
           method: "GET",
         }
@@ -36,14 +37,29 @@ const Favorites = () => {
 
   return (
     <div>
-      <Header />
-
-      <div className="container">
-        {listState.map((movie) => {
-          return <MovieCard movie={movie} />;
-        })}
-      </div>
-    </div>
+    <Header />    
+    <Container flex={true}>
+      {listState.length % 3 == 0 ? (
+        <Row className="row justify-content-md-center">
+          {listState.map((movie) => (
+            <Col className="justify-content-md-center">
+              <MovieCard movie={movie} />
+            </Col>
+          ))}
+      
+        </Row>
+      ) : (
+        <Row className="row justify-content-md-center">
+          {listState.map((movie) => (
+            <Col className="justify-content-md-center">
+              <MovieCard movie={movie} />
+            </Col>
+          ))}
+          <Col></Col>
+        </Row>
+      )}
+    </Container>
+  </div>
   );
 };
 

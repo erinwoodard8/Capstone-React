@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/search.css";
 import { Row, Col, Container } from "react-bootstrap";
-import MovieCard from "../Favorites/MovieCard";
+import MovieCard from "../static/MovieCard";
 import Header from "../static/Header";
 
 const Search = () => {
@@ -52,7 +52,6 @@ const Search = () => {
 
   return (
     <div>
-      {/* <Header /> */}
       <div className="textBox">
         <input
           type="text"
