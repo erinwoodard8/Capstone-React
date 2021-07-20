@@ -36,4 +36,5 @@ const MovieCard = ({ movie, listState, removeFavorite }) => {
   );
 };
 
+
 export default MovieCard;
