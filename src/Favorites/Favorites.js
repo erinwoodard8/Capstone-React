@@ -3,6 +3,11 @@ import Header from "../static/Header";
 import MovieCard from "../static/MovieCard";
 import "../styles/favorites.css";
 import { Row, Col, Container } from "react-bootstrap";
+import { styles } from "ansi-colors";
+// import Illusion from "../static/Illusion.jpg";
+// import Illusion from "../styles/Illusion.jpg";
+// import Panther from "../styles/Panther.jpg";
+
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
@@ -38,11 +43,22 @@ const Favorites = () => {
     }
   }
   console.log(listState);
-  
+
   return (
     <div>
     <Header />
-    {listState.length == 0 ? <div>nothing</div> : <Container flex={true}>
+    {/* <div style={{
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  backgroundImage: `url(${/styles/panther.jpg})`
+}} /> */}
+
+    <div className=" d-flex justify-content-center">
+    {/* <img src="Panther.jpg" class="mx-auto d-block"></img> */}
+
+    
+    {listState.length == 0 ? <div className="noFavorites text-center " ><bold>No movies listed on favorites</bold></div> : <Container flex={true}>
       {listState.length % 3 == 0 ? (
         <Row className="row justify-content-md-center">
           {listState.map((movie) => (
@@ -61,7 +77,22 @@ const Favorites = () => {
           <Col></Col>
         </Row>
       )}
-    </Container>}    
+    </Container>}  
+    </div>
+    <body >
+    {/* <div style={{ width: 660, height: 'auto' }}>
+  <Ratio aspectRatio="16x9">
+    <embed type="image/svg+xml" src="../Styles/Panther.jpg" />
+  </Ratio>
+</div> */}
+       {/* <div style={{
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  backgroundImage: `url(${Panther.jpg})`
+}} /> */}
+<div ></div>
+    </body>
   </div>
   );
 };
