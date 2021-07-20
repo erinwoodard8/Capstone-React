@@ -21,6 +21,7 @@ const Search = () => {
   
   }, [])
   
+  
 // IF THE RESPONSE IS NULL YOU NEED TO USE A DIFFERENT API KEY BECAUSE OF THE REQUEST LIMIT (k_2whi6r49 OR k_sf4k7xi2 OR k_7mrq9eci OR k_q83az6pl)
   async function getMovie() {
     let title = titleState;
@@ -69,6 +70,7 @@ const Search = () => {
     }
     // console.log(user.favoriteMovies);
 
+
     const response = await fetch("http://localhost:8080/users/favorites", {
       method: "POST",
       credentials: "include",
@@ -84,37 +86,11 @@ const Search = () => {
 
 
 
-
-
-  // async function getFavorites() {
-  //   const response = await fetch("http://localhost:8080/users/login", {
-  //     method: "GET",
-  //     credentials: "include",
-  //   });
-  //   const user = await response.json();
-  //   await user.favoriteMovies.push(movieState.id);
-  //   await setUserState(user);
-  //   console.log("USERSTATE: " +  JSON.stringify(user));
-
-  //   console.log(await userState.favoriteMovies);
-
-    
-  //   const postResponse = await fetch("http://localhost:8080/post/google", {
-  //       method: "POST",
-  //       body: JSON.stringify(userState),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //   });
-    // const json = await postResponse.json();
-    // console.log(await "POSTUSER: " + JSON.stringify(json));
-  // }
-
-
   console.log("TITLESTATE: " + titleState);
   
 
   return (
+    
     <div>
       <div className="textBox">
         <input
@@ -145,7 +121,7 @@ const Search = () => {
                             <p className="movieTitle">{movieState.title} </p> 
                           </div>
                           <div className="col-2">
-                            <button type="button" class="btn btn-warning iconBtn">
+                            <button type="button" class="btn btn-warning iconBtn" onClick={saveMovie}>
                               <i class="material-icons md-favorite"></i>
                             </button>
                           </div>
@@ -176,7 +152,7 @@ const Search = () => {
       </div>
 
       {/* <button onClick={getUser}>GET USER</button> */}
-      <button onClick={saveMovie}>SAVE MOVIE</button>
+      {/* <button onClick={saveMovie}>SAVE MOVIE</button> */}
     </div>
   );
 };
