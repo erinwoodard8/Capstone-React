@@ -6,10 +6,11 @@ import { Row, Col, Container } from "react-bootstrap";
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
+  const [renderState, setRenderState] = useState(true);
 
   useEffect(() => {
     getFavorites();
-  }, []);
+  }, [renderState]);
 
   async function getFavorites() {
     const response = await fetch("http://localhost:8080/users/login", {
@@ -21,29 +22,53 @@ const Favorites = () => {
 
     let movieList = [];
     console.log(favorites);
-    for (let i = 0; i < favorites.length; i++) {
-      const response = await fetch(
-        "https://imdb-api.com/en/API/Title/k_q83az6pl/" + favorites[i],
-        {
-          method: "GET",
-        }
-      );
-      const movie = await response.json();
-      movieList.push(movie);
+    if(favorites == null) {
+      setListState(movieList);
+    } else {
+      for (let i = 0; i < favorites.length; i++) {
+        const response = await fetch(
+          "https://imdb-api.com/en/API/Title/k_q83az6pl/" + favorites[i],
+          {
+            method: "GET",
+          }
+        );
+        const movie = await response.json();
+        movieList.push(movie);
+      }
+      setListState(movieList);
     }
-    setListState(movieList);
   }
-  console.log(listState);
+  async function removeFavorite(movie) {
+    const userResponse = await fetch("http://localhost:8080/users/login", {
+      method: "GET",
+      credentials: "include",
+    });
+    const user = await userResponse.json();
+    const favorites = user.favoriteMovies;
+    const movieIndex = favorites.indexOf(movie.id);
+    favorites.splice(movieIndex, 1);
+    
+    const response = await fetch("http://localhost:8080/users/favorites", {
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    setRenderState(!renderState);
+  }
+
 
   return (
     <div>
-    <Header />    
-    <Container flex={true}>
+    <Header />
+    {listState.length == 0 ? <div>nothing</div> : <Container flex={true}>
       {listState.length % 3 == 0 ? (
         <Row className="row justify-content-md-center">
           {listState.map((movie) => (
-            <Col className="justify-content-md-center">
-              <MovieCard movie={movie} />
+            <Col key={movie.id} className="justify-content-md-center">
+              <MovieCard  movie={movie} listState={listState} removeFavorite={removeFavorite} />
             </Col>
           ))}
       
@@ -51,14 +76,15 @@ const Favorites = () => {
       ) : (
         <Row className="row justify-content-md-center">
           {listState.map((movie) => (
-            <Col className="justify-content-md-center">
-              <MovieCard movie={movie} />
+            <Col key={movie.id} className="justify-content-md-center">
+              <MovieCard  movie={movie} listState={listState} removeFavorite={removeFavorite}/>
             </Col>
           ))}
           <Col></Col>
         </Row>
       )}
-    </Container>
+    </Container>}    
+
   </div>
   );
 };
