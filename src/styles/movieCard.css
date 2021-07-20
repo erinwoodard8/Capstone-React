@@ -22,3 +22,15 @@
 .card-body{
     text-align: center;
 }
+
+.card-button{
+    background-color: #FFC0C2;
+    color: #0e3150;
+    border: none;
+}
+
+.card-button:hover{
+    background-color: #0e3150;
+    color: #FFC0C2;
+    border: 1px solid #FFC0C2 ;
+}

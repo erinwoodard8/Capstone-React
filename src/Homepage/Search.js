@@ -77,7 +77,7 @@ const Search = () => {
             <Row className="row justify-content-md-center">
               {results.map((movie) => (
                 <Col className="justify-content-md-center width">
-                  <MovieCard movie={movie} />
+                  <MovieCard key={movie.id} movie={movie} />
                 </Col>
               ))}
           
@@ -86,7 +86,7 @@ const Search = () => {
             <Row className="row justify-content-md-center">
               {results.map((movie) => (
                 <Col className="justify-content-md-center width">
-                  <MovieCard movie={movie} />
+                  <MovieCard key={movie.id} movie={movie} />
                 </Col>
               ))}
               <Col></Col>
