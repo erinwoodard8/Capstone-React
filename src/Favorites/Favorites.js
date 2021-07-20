@@ -4,6 +4,7 @@ import MovieCard from "../static/MovieCard";
 import "../styles/favorites.css";
 import { Row, Col, Container } from "react-bootstrap";
 import { styles } from "ansi-colors";
+import noMovieTrans from "../styles/noMovieTrans.png";
 // import Illusion from "../static/Illusion.jpg";
 // import Illusion from "../styles/Illusion.jpg";
 // import Panther from "../styles/Panther.jpg";
@@ -54,12 +55,19 @@ const Favorites = () => {
   backgroundImage: `url(${/styles/panther.jpg})`
 }} /> */}
 
-    <div className=" d-flex justify-content-center">
+    <div className="d-flex justify-content-center noFavLogo">
     {/* <img src="Panther.jpg" class="mx-auto d-block"></img> */}
 
     
-    {listState.length == 0 ? <div className="noFavorites text-center " ><bold>No movies listed on favorites</bold></div> : <Container flex={true}>
-      {listState.length % 3 == 0 ? (
+    {listState.length == 0 ? <div className="noFavorites">
+      <img src={noMovieTrans} />
+      </div> 
+      : <Container flex={true}>
+
+        {/* Below populates if no favorite movies are present */}
+        {/* But picture only appears momentarily */}
+
+      {/* {listState.length % 3 == 0 ? (
         <Row className="row justify-content-md-center">
           {listState.map((movie) => (
             <Col className="justify-content-md-center">
@@ -76,10 +84,10 @@ const Favorites = () => {
           ))}
           <Col></Col>
         </Row>
-      )}
+      )} */}
     </Container>}  
     </div>
-    <body >
+    <body>
     {/* <div style={{ width: 660, height: 'auto' }}>
   <Ratio aspectRatio="16x9">
     <embed type="image/svg+xml" src="../Styles/Panther.jpg" />

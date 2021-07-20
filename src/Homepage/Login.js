@@ -8,7 +8,7 @@ const Login = () => {
       <video autoPlay loop muted={true} height="150px" width="300px">
         <source src={videos} type="video/mp4"/>
       </video>
-      <div className="imageLogo" >
+      <div className="imageLogo">
         <img src={MyflixLogo4} alt="Logo" />
       </div>
       <a
