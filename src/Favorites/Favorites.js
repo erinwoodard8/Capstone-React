@@ -18,27 +18,31 @@ const Favorites = () => {
     });
     const user = await response.json();
     let favorites = user.favoriteMovies;
-
     let movieList = [];
     console.log(favorites);
-    for (let i = 0; i < favorites.length; i++) {
-      const response = await fetch(
-        "https://imdb-api.com/en/API/Title/k_q83az6pl/" + favorites[i],
-        {
-          method: "GET",
-        }
-      );
-      const movie = await response.json();
-      movieList.push(movie);
+
+    if(favorites == null) {
+      setListState(movieList);
+    } else {
+      for (let i = 0; i < favorites.length; i++) {
+        const response = await fetch(
+          "https://imdb-api.com/en/API/Title/k_q83az6pl/" + favorites[i],
+          {
+            method: "GET",
+          }
+        );
+        const movie = await response.json();
+        movieList.push(movie);
+      }
+      setListState(movieList);
     }
-    setListState(movieList);
   }
   console.log(listState);
-
+  
   return (
     <div>
-    <Header />    
-    <Container flex={true}>
+    <Header />
+    {listState.length == 0 ? <div>nothing</div> : <Container flex={true}>
       {listState.length % 3 == 0 ? (
         <Row className="row justify-content-md-center">
           {listState.map((movie) => (
@@ -46,7 +50,6 @@ const Favorites = () => {
               <MovieCard movie={movie} />
             </Col>
           ))}
-      
         </Row>
       ) : (
         <Row className="row justify-content-md-center">
@@ -58,9 +61,8 @@ const Favorites = () => {
           <Col></Col>
         </Row>
       )}
-    </Container>
+    </Container>}    
   </div>
   );
 };
-
 export default Favorites;
