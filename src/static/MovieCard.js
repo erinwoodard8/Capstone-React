@@ -7,7 +7,7 @@ const MovieCard = ({movie}) => {
 return(
     <Card className="card-container" style={{ width: "18rem" }}>
     <Card.Img className="card-image" variant="top" src={movie.image} />
-    <Card.Body>
+    <Card.Body className="card-body">
       <Card.Title>{movie.title}</Card.Title>
     </Card.Body>  
   </Card>

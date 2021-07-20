@@ -3,6 +3,7 @@ import "../styles/search.css";
 import { Row, Col, Container } from "react-bootstrap";
 import MovieCard from "../static/MovieCard";
 import Header from "../static/Header";
+import Modal from "../Homepage/Modal";
 
 const Search = () => {
   const [results, setResultsState] = useState([]);
@@ -63,6 +64,12 @@ const Search = () => {
           <i class="fa fa-search"></i>
         </button>
       </div>
+
+      {/* test start */}
+        <div>
+            <Modal/>
+        </div>
+      {/* test end */}
 
       <div>
         <Container flex={true}>
