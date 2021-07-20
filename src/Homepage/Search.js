@@ -68,6 +68,7 @@ const Search = () => {
     } else {
       user.favoriteMovies.push(movieId);
     }
+    alert("Your movie has been saved!")
     // console.log(user.favoriteMovies);
 
 
@@ -92,6 +93,7 @@ const Search = () => {
   return (
     
     <div>
+      
       <div className="textBox">
         <input
           type="text"
@@ -110,7 +112,6 @@ const Search = () => {
               <div className="container-fluid" >
                     <div className= "row">
                       <div className="col-md-1"></div>
-                        
                         <div id="imageBg" className="col-md-3 card p-2 border-right-0 img-responsive center-block d-block mx-auto">
                             <img className="img-fluid" width="80%" src={movieState.image} /> 
                         </div>
@@ -155,6 +156,7 @@ const Search = () => {
       {/* <button onClick={saveMovie}>SAVE MOVIE</button> */}
     </div>
   );
+
 };
 
 export default Search;
