@@ -43,6 +43,14 @@
   padding-top: 0%;
 }
 
+.header-text {
+    font-size: 26px;
+}
+
+.info-text {
+    font-size: 18px;
+}
+
 .displayInfo {
   font-size: 30px;
 }

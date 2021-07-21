@@ -62,7 +62,7 @@ const Results2 = (movieState) => {
 
         <div
           className="col-md-7 info-container"
-        //   className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "
+          //   className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "
         >
           <p className="movieTitle">{movieState.movieState.title} </p>
           <p className="time">
@@ -72,11 +72,11 @@ const Results2 = (movieState) => {
           </p>
 
           <div>
-            <h2>Award:</h2>
-            <h4>{movieState.movieState.awards}</h4>
+            <p className="header-text">Award:</p>
+            <p className="info-text">{movieState.movieState.awards}</p>
             <br></br>
-            <h2> Plot: </h2>
-            <h4>{movieState.movieState.plot}</h4>
+            <p className="header-text"> Plot: </p>
+            <p className="info-text">{movieState.movieState.plot}</p>
           </div>
           <button
             type="button"
