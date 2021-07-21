@@ -1,4 +1,4 @@
-// import "../styles/common.css";
+import React from 'react';
 import MyflixLogo4 from "../static/MyflixLogo4.png";
 import "../styles/login.css";
 import videos from "../styles/videos.mp4";
