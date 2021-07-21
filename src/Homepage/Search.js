@@ -3,10 +3,11 @@ import "../styles/search.css";
 import { Row, Col, Container } from "react-bootstrap";
 import MovieCard from "../static/MovieCard";
 import Header from "../static/Header";
+import Modal from "../Homepage/Modal";
 
 const Search = () => {
   const [results, setResultsState] = useState([]);
-  const [movieState, setMovieState] = useState({ results: [] });
+  const [movieState, setMovieState] = useState();
   const [titleState, setTitleState] = useState("");
 
   const handleChange = (event) => {
@@ -14,7 +15,7 @@ const Search = () => {
     console.log(event.target.value);
   };
 
-  async function getMovie() {
+  async function getMovieResults() {
     let title = titleState;
     const idResponse = await fetch(
       "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
@@ -24,10 +25,11 @@ const Search = () => {
     );
     const movie = await idResponse.json();
     const newResults = await movie.results;
-    const movieId = await movie.results[0].id;
-    console.log(await movie);
-    console.log("MOVIE ID: " + movieId);
+    setResultsState(newResults);
+  }
 
+  async function getMovieInfo(movie) {
+    let movieId = movie.id;
     const movieResponse = await fetch(
       "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
       {
@@ -35,20 +37,11 @@ const Search = () => {
       }
     );
     const movieInfo = await movieResponse.json();
-    const newMovieState = movieInfo;
-    setMovieState(newMovieState);
-    setResultsState(newResults);
+    setMovieState(movieInfo);
+    console.log(movieInfo);
   }
 
-  // console.log(results);
-
-  console.log("TITLESTATE: " + titleState);
-
-  // rendering movie list
-  const renderMovies = (movieState) => {
-    return movieState.results.map((movie) => <MovieCard movie={movie} />);
-  };
-  // end
+  
 
   return (
     <div>
@@ -59,10 +52,16 @@ const Search = () => {
           placeholder="Search for a Movie Title..."
           onChange={handleChange}
         />
-        <button onClick={getMovie} type="button" className="submitButt">
+        <button onClick={getMovieResults} type="button" className="submitButt">
           <i class="fa fa-search"></i>
         </button>
       </div>
+
+      {/* test start */}
+      <div>
+        <Modal />
+      </div>
+      {/* test end */}
 
       <div>
         <Container flex={true}>
@@ -70,16 +69,15 @@ const Search = () => {
             <Row className="row justify-content-md-center">
               {results.map((movie) => (
                 <Col className="justify-content-md-center width">
-                  <MovieCard movie={movie} />
+                  <MovieCard key={movie.id} movie={movie} getMovieInfo={getMovieInfo} />
                 </Col>
               ))}
-          
             </Row>
           ) : (
             <Row className="row justify-content-md-center">
               {results.map((movie) => (
                 <Col className="justify-content-md-center width">
-                  <MovieCard movie={movie} />
+                  <MovieCard key={movie.id} movie={movie} getMovieInfo={getMovieInfo}/>
                 </Col>
               ))}
               <Col></Col>

@@ -11,7 +11,7 @@ const Favorites = () => {
 
   useEffect(() => {
     getFavorites();
-  }, []);
+  }, [renderState]);
 
   async function getFavorites() {
     const response = await fetch("http://localhost:8080/users/login", {
@@ -22,8 +22,7 @@ const Favorites = () => {
     let favorites = user.favoriteMovies;
     let movieList = [];
     console.log(favorites);
-
-    if (favorites == null) {
+    if(favorites == null) {
       setListState(movieList);
     } else {
       for (let i = 0; i < favorites.length; i++) {
@@ -59,7 +58,6 @@ const Favorites = () => {
     });
     setRenderState(!renderState);
   }
-
   return (
     <div>
       <Header />

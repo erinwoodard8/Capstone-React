@@ -9,6 +9,8 @@ import Landing from './Homepage/Landing.js';
 import Search from './Homepage/Search';
 import Favorites from './Favorites/Favorites';
 import Results from './Homepage/Results';
+import Modal  from './Homepage/Modal';
+import ModalIn from './Homepage/Modal';
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/test" component={Test} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/modal" component ={ModalIn} />
       </Switch>
     
     </div>
