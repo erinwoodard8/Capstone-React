@@ -126,9 +126,7 @@ const Results = () => {
                   <h2> Plot: </h2>
                   <h4>{movieState.plot}</h4>
                 </div>
-                <button type="button" class="btn btn-warning">
-                  Add to favorite{" "}
-                </button>
+                <button type="button" class="btn btn-warning resultsBtn" onClick={saveMovie}>Add to favorite </button>
               </div>
 
               <div className="col-md-1"></div>
@@ -138,7 +136,7 @@ const Results = () => {
       </div>
 
       {/* <button onClick={getUser}>GET USER</button> */}
-      <button onClick={saveMovie}>SAVE MOVIE</button>
+      {/* <button onClick={saveMovie}>SAVE MOVIE</button> */}
     </div>
   );
 };
