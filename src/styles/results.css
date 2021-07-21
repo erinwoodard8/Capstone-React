@@ -1,79 +1,60 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Domine&display=swap");
 
-.textBox{
-    text-align: center;
-    padding-top: 5rem;
-    font-family: Georgia, serif;
+
+.main-container {
+    margin-top: 15px;
 }
-#searchBar{
-    text-align: center;
-    font-size: 25px;
-    padding: 25px;
-    width: 50%;
-    height: 80px;
-    border-color:#4b4969;
-    outline: none;
-}
-.submitButt{
-    height: 80px;
-    width: 100px;
-    font-size: 25px;
-    background-color:#FFC0C2;
-    margin-left: 10px;
-    padding: 7px;
-    border: none;
+.info-container {
+  background-color: #0e3150;
+  color: #ffc0c2;
+  font-family: "Domine", serif;
+  text-align: center;
+  border-radius:5%;
+  padding-bottom: 15px;
+
 }
 
 .displayInfo::after {
-    border: 3px solid #0e3150 ;
-    padding: 5px;
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-#imageBg {
-    /* background-color:#0e3150; */
-    background-color: transparent;
-    border: none;
-    color: #FFC0C2;
-    font-family: 'Domine', serif;
-
+  border: 3px solid #0e3150;
+  padding: 5px;
+  content: "";
+  clear: both;
+  display: table;
 }
 
-#textColor {
-    background-color:#0e3150;
-    color: #FFC0C2;
-    font-family: 'Domine', serif;
+.img-container {
+  background-color: transparent;
+  border: none;
+  color: #ffc0c2;
+  font-family: "Domine", serif;
+  margin: auto;
 }
 
 .movieTitle {
-    font-size: 50px;
-    margin-bottom: 0%;
-    padding-bottom: 0%;
+  font-size: 50px;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
 }
 
-.time{
-    font-size: 17px;
-    margin-top: 0%;
-    padding-top: 0%;
+.time {
+  font-size: 17px;
+  margin-top: 0%;
+  padding-top: 0%;
 }
 
-.displayInfo{
-    font-size: 30px;
-
-} 
-
-.resultsBtn{
-    background-color: #FFC0C2;
-    color: #0e3150;
-    border: 1px solid #FFC0C2 ;
+.displayInfo {
+  font-size: 30px;
 }
 
-.resultsBtn:hover{
-    background-color: #0e3150;
-    color: #FFC0C2;
-    border: 1px solid #FFC0C2 ;
+.resultsBtn {
+  background-color: #ffc0c2;
+  color: #0e3150;
+  border: 1px solid #ffc0c2;
 }
 
+.resultsBtn:hover {
+  background-color: #0e3150;
+  color: #ffc0c2;
+  border: 1px solid #ffc0c2;
+}
