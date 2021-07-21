@@ -4,11 +4,13 @@ import { Row, Col, Container } from "react-bootstrap";
 import MovieCard from "../static/MovieCard";
 import Header from "../static/Header";
 import Modal from "../Homepage/Modal";
+import Results2 from "../Homepage/Results2";
 
 const Search = () => {
   const [results, setResultsState] = useState([]);
   const [movieState, setMovieState] = useState();
   const [titleState, setTitleState] = useState("");
+  const [displayState, setDisplayState] = useState(false);
 
   const handleChange = (event) => {
     setTitleState(event.target.value);
@@ -38,55 +40,68 @@ const Search = () => {
     );
     const movieInfo = await movieResponse.json();
     setMovieState(movieInfo);
-    console.log(movieInfo);
+    setDisplayState(true);
+    // console.log(movieInfo);
   }
-
-  
 
   return (
     <div>
-      <div className="textBox">
-        <input
-          type="text"
-          id="searchBar"
-          placeholder="Search for a Movie Title..."
-          onChange={handleChange}
-        />
-        <button onClick={getMovieResults} type="button" className="submitButt">
-          <i class="fa fa-search"></i>
-        </button>
-      </div>
+      {displayState ? (
+        <Results2 movieState={movieState} />
+      ) : (
+        <div>
+          <div className="textBox">
+            <input
+              type="text"
+              id="searchBar"
+              placeholder="Search for a Movie Title..."
+              onChange={handleChange}
+            />
+            <button
+              onClick={getMovieResults}
+              type="button"
+              className="submitButt"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
 
-      {/* test start */}
-      <div>
-        <Modal />
-      </div>
-      {/* test end */}
+          <div>
+            <Modal />
+          </div>
 
-      <div>
-        <Container flex={true}>
-          {results.length % 3 == 0 ? (
-            <Row className="row justify-content-md-center">
-              {results.map((movie) => (
-                <Col className="justify-content-md-center width">
-                  <MovieCard key={movie.id} movie={movie} getMovieInfo={getMovieInfo} />
-                </Col>
-              ))}
-            </Row>
-          ) : (
-            <Row className="row justify-content-md-center">
-              {results.map((movie) => (
-                <Col className="justify-content-md-center width">
-                  <MovieCard key={movie.id} movie={movie} getMovieInfo={getMovieInfo}/>
-                </Col>
-              ))}
-              <Col></Col>
-            </Row>
-          )}
-        </Container>
-      </div>
-
-      {/* test end */}
+          <div>
+            <Container flex={true}>
+              {results.length % 3 == 0 ? (
+                <Row className="row justify-content-md-center">
+                  {results.map((movie) => (
+                    <Col className="justify-content-md-center width">
+                      <MovieCard
+                        key={movie.id}
+                        movie={movie}
+                        getMovieInfo={getMovieInfo}
+                      />
+                    </Col>
+                  ))}
+                </Row>
+              ) : (
+                <Row className="row justify-content-md-center">
+                  {results.map((movie) => (
+                    <Col className="justify-content-md-center width">
+                      <MovieCard
+                        key={movie.id}
+                        movie={movie}
+                        getMovieInfo={getMovieInfo}
+                      />
+                    </Col>
+                  ))}
+                  <Col></Col>
+                </Row>
+              )}
+            </Container>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
