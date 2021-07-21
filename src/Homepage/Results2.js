@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/results.css";
 
 const Results2 = (movieState) => {
   const [userState, setUserState] = useState({});
+
+  useEffect(() => {
+    getUser();
+  }, []);
 
   console.log(movieState.movieState.title);
 
@@ -26,6 +30,7 @@ const Results2 = (movieState) => {
       user.favoriteMovies = [movieId];
     } else {
       user.favoriteMovies.push(movieId);
+      alert("movie has been added to favorites");
     }
     // console.log(user.favoriteMovies);
 
