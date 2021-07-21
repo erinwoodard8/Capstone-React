@@ -3,6 +3,7 @@ import Header from "../static/Header";
 import MovieCard from "../static/MovieCard";
 import "../styles/favorites.css";
 import { Row, Col, Container } from "react-bootstrap";
+import noMovieTrans from "../static/noMovieTrans.png";
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
@@ -19,7 +20,6 @@ const Favorites = () => {
     });
     const user = await response.json();
     let favorites = user.favoriteMovies;
-
     let movieList = [];
     console.log(favorites);
     if(favorites == null) {
@@ -58,35 +58,44 @@ const Favorites = () => {
     });
     setRenderState(!renderState);
   }
-
-
   return (
     <div>
-    <Header />
-    {listState.length == 0 ? <div>nothing</div> : <Container flex={true}>
-      {listState.length % 3 == 0 ? (
-        <Row className="row justify-content-md-center">
-          {listState.map((movie) => (
-            <Col key={movie.id} className="justify-content-md-center">
-              <MovieCard  movie={movie} listState={listState} removeFavorite={removeFavorite} />
-            </Col>
-          ))}
-      
-        </Row>
+      <Header />
+      {listState.length == 0 ? (
+        <div className="noFavorites">
+          <img className="img-fluid" width="50%"  src={noMovieTrans} />
+        </div>
       ) : (
-        <Row className="row justify-content-md-center">
-          {listState.map((movie) => (
-            <Col key={movie.id} className="justify-content-md-center">
-              <MovieCard  movie={movie} listState={listState} removeFavorite={removeFavorite}/>
-            </Col>
-          ))}
-          <Col></Col>
-        </Row>
+        <Container flex={true}>
+          {listState.length % 3 == 0 ? (
+            <Row className="row justify-content-md-center">
+              {listState.map((movie) => (
+                <Col key={movie.id} className="justify-content-md-center">
+                  <MovieCard
+                    movie={movie}
+                    listState={listState}
+                    removeFavorite={removeFavorite}
+                  />
+                </Col>
+              ))}
+            </Row>
+          ) : (
+            <Row className="row justify-content-md-center">
+              {listState.map((movie) => (
+                <Col key={movie.id} className="justify-content-md-center">
+                  <MovieCard
+                    movie={movie}
+                    listState={listState}
+                    removeFavorite={removeFavorite}
+                  />
+                </Col>
+              ))}
+              <Col></Col>
+            </Row>
+          )}
+        </Container>
       )}
-    </Container>}    
-
-  </div>
+    </div>
   );
 };
-
 export default Favorites;

@@ -1,7 +1,34 @@
-/* .container {
-    margin:auto;
-    display: flex;
+/* .noFavorites { */
+    /* margin:auto; */
+    /* display: flex !important;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-} */
+    text-decoration-color: crimson; */
+    /* color: rgb(250, 7, 39); */
+    /* font-size: 30px; */
+    /* margin-left: 50% !important; */
+    /* margin-top: 250px !important;
+    margin-bottom: 5px !important; */
+/* } */
+/* .Panther .noFavorites{ 
+    /* height: 5%; background-position: center; */
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    /* background-image: url("https://hdqwalls.com/wallpapers/black-panther-artwork-2018-hd-9y.jpg"); */
+
+/* } */ 
+  
+/* body, html {
+    /* image-rendering: auto !important; */
+    /* background-image: url("https://hdqwalls.com/wallpapers/black-panther-artwork-2018-hd-9y.jpg"); */
+  /* } */ 
+
+  .noFavorites {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+  }
+  
+  
