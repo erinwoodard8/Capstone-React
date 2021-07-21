@@ -63,11 +63,13 @@ const Results = () => {
     let user = userState;
     if (user.favoriteMovies == null) {
       user.favoriteMovies = [movieId];
+
     } else {
       user.favoriteMovies.push(movieId);
+      alert("movie has been added to favorites")
+
     }
     // console.log(user.favoriteMovies);
-
     const response = await fetch("http://localhost:8080/users/favorites", {
       method: "POST",
       credentials: "include",
