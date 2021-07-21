@@ -24,5 +24,11 @@
     /* background-image: url("https://hdqwalls.com/wallpapers/black-panther-artwork-2018-hd-9y.jpg"); */
   /* } */ 
 
+  .noFavorites {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+  }
   
   
