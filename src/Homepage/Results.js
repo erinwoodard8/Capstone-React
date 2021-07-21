@@ -83,33 +83,6 @@ const Results = () => {
 
 
 
-
-
-  // async function getFavorites() {
-  //   const response = await fetch("http://localhost:8080/users/login", {
-  //     method: "GET",
-  //     credentials: "include",
-  //   });
-  //   const user = await response.json();
-  //   await user.favoriteMovies.push(movieState.id);
-  //   await setUserState(user);
-  //   console.log("USERSTATE: " +  JSON.stringify(user));
-
-  //   console.log(await userState.favoriteMovies);
-
-    
-  //   const postResponse = await fetch("http://localhost:8080/post/google", {
-  //       method: "POST",
-  //       body: JSON.stringify(userState),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //   });
-    // const json = await postResponse.json();
-    // console.log(await "POSTUSER: " + JSON.stringify(json));
-  // }
-
-
   console.log("TITLESTATE: " + titleState);
   
 
@@ -156,13 +129,6 @@ const Results = () => {
               </div>
         </form>
 
-          {/* testing part start */}
-
-          
-
-          {/* testing part end */}
-
-        
       </div>
 
       {/* <button onClick={getUser}>GET USER</button> */}

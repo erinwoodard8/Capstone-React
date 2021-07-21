@@ -11,6 +11,7 @@
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "react-modal": "^3.14.3",
+    "react-responsive-carousel": "^3.2.20",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^1.1.5",
     "web-vitals": "^1.1.2"

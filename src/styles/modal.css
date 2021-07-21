@@ -1,38 +1,51 @@
-  .modalDisplay {
-   position:relative;
-  top:30%;
-  left:25%;
-  width:50%;
-  overflow: scroll;
-  height:68%; 
+
+.modalDisplay {
+  position: relative;
+  top: 30%;
+  left: 25%;
+  width: 50%;
+  overflow-y: scroll;
+  height: 68%;
   background-color: #0e3150;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 65px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+ 
+}
 
-  }
 
-   #newRel {
-    text-align: center;
-    font-family: 'Domine', serif;
-    font-size: 50px;
-    color: #FFC0C2 ;
-    font: bold;
-  }
+#newRel {
+  text-align: center;
+  font-family: "Domine", serif;
+  font-size: 4vw;
+  color: #ffc0c2;
+  font: bold;
+}
+.modalButt {
+  float: right;
+  margin-right: 10px;
+  background-color: rgb(235, 75, 75);
+  color: #0e3150;
+  border: none;
+  font-weight: bold;
+  font-family: "Domine", serif;
+}
+.modalButt:hover {
+  background-color: #0e3150;
+  color: #ffc0c2;
+  border: 1px solid #ffc0c2;
+}
 
-  .modalButt{
-    float: right;
-    margin-right: 10px;
-    background-color: #FFC0C2;
-    color: #0e3150;
-    border: none;
-    font-weight: bold;
-    font-family: 'Domine', serif;
-  }
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 1500ms ease-in-out;
+}
 
-  .modalButt:hover{
-    background-color: #0e3150;
-    color: #FFC0C2;
-    border: 1px solid #FFC0C2 ;
-  }
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
