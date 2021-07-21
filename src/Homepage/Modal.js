@@ -36,7 +36,7 @@ const ModalIn =() => {
 
 
      return(
-                <Modal className="modalDisplay" isOpen={modalIsOpen} onRequestClose = {()=>setModalIsOpen(false)} >
+                <Modal closeTimeoutMS={1500} className="modalDisplay" isOpen={modalIsOpen} onRequestClose = {()=>setModalIsOpen(false)} >
                     <Button className="modalButt" onClick={setModalIsOpenToFalse}>Close</Button>
                     <div id="newRel">Now In Theaters</div>
 
