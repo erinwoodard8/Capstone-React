@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "../styles/results.css";
 
-const Results2 = (movieState) => {
+const Results2 = ({movieState, back}) => {
   const [userState, setUserState] = useState({});
+
+
 
   useEffect(() => {
     getUser();
   }, []);
 
-  console.log(movieState.movieState.title);
+  console.log(movieState.title);
 
   async function getUser() {
     const response = await fetch("http://localhost:8080/users/login", {
@@ -23,7 +25,7 @@ const Results2 = (movieState) => {
   }
 
   async function saveMovie() {
-    const movieId = movieState.movieState.id;
+    const movieId = movieState.id;
     console.log(movieId);
     let user = userState;
     if (user.favoriteMovies == null) {
@@ -56,7 +58,7 @@ const Results2 = (movieState) => {
           <img
             className="img-fluid"
             max-width="50%"
-            src={movieState.movieState.image}
+            src={movieState.image}
           />
         </div>
 
@@ -64,19 +66,19 @@ const Results2 = (movieState) => {
           className="col-md-7 info-container"
           //   className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "
         >
-          <p className="movieTitle">{movieState.movieState.title} </p>
+          <p className="movieTitle">{movieState.title} </p>
           <p className="time">
             {" "}
-            {movieState.movieState.year} | {movieState.movieState.runtimeMins}{" "}
+            {movieState.year} | {movieState.runtimeMins}{" "}
             min{" "}
           </p>
 
           <div>
             <p className="header-text">Award:</p>
-            <p className="info-text">{movieState.movieState.awards}</p>
+            <p className="info-text">{movieState.awards}</p>
             <br></br>
             <p className="header-text"> Plot: </p>
-            <p className="info-text">{movieState.movieState.plot}</p>
+            <p className="info-text">{movieState.plot}</p>
           </div>
           <button
             type="button"
@@ -85,6 +87,8 @@ const Results2 = (movieState) => {
           >
             Add to favorite{" "}
           </button>
+
+          <button onClick={back}>BACK</button>
         </div>
 
         <div className="col-md-1"></div>

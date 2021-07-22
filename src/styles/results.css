@@ -9,7 +9,6 @@
   color: #ffc0c2;
   font-family: "Domine", serif;
   text-align: center;
-  border-radius: 5%;
   padding-bottom: 15px;
 }
 
@@ -35,6 +34,7 @@
   font-size: 50px;
   margin-bottom: 0%;
   padding-bottom: 0%;
+  width: 100%;
 }
 
 .time {
