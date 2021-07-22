@@ -1,18 +1,16 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Domine&display=swap");
 
-
 .main-container {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 .info-container {
   background-color: #0e3150;
   color: #ffc0c2;
   font-family: "Domine", serif;
   text-align: center;
-  border-radius:5%;
+  border-radius: 5%;
   padding-bottom: 15px;
-
 }
 
 .displayInfo::after {
@@ -29,6 +27,8 @@
   color: #ffc0c2;
   font-family: "Domine", serif;
   margin: auto;
+  max-width:500px;
+  text-align: center;
 }
 
 .movieTitle {
@@ -44,11 +44,11 @@
 }
 
 .header-text {
-    font-size: 26px;
+  font-size: 26px;
 }
 
 .info-text {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .displayInfo {

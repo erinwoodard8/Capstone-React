@@ -4,10 +4,13 @@ import MovieCard from "../static/MovieCard";
 import "../styles/favorites.css";
 import { Row, Col, Container } from "react-bootstrap";
 import noMovieTrans from "../static/noMovieTrans.png";
+import Results2 from "../Homepage/Results2";
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
   const [renderState, setRenderState] = useState(true);
+  const [displayState, setDisplayState] = useState(false);
+  const [movieState, setMovieState] = useState();
 
   useEffect(() => {
     getFavorites();
@@ -22,7 +25,7 @@ const Favorites = () => {
     let favorites = user.favoriteMovies;
     let movieList = [];
     console.log(favorites);
-    if(favorites == null) {
+    if (favorites == null) {
       setListState(movieList);
     } else {
       for (let i = 0; i < favorites.length; i++) {
@@ -48,7 +51,7 @@ const Favorites = () => {
     const favorites = user.favoriteMovies;
     const movieIndex = favorites.indexOf(movie.id);
     favorites.splice(movieIndex, 1);
-    
+
     const response = await fetch("http://localhost:8080/users/favorites", {
       method: "POST",
       credentials: "include",
@@ -59,13 +62,30 @@ const Favorites = () => {
     });
     setRenderState(!renderState);
   }
+
+  async function getMovieInfo(movie) {
+    let movieId = movie.id;
+    const movieResponse = await fetch(
+      "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
+      {
+        method: "GET",
+      }
+    );
+    const movieInfo = await movieResponse.json();
+    setMovieState(movieInfo);
+    setDisplayState(true);
+    // console.log(movieInfo);
+  }
+
   return (
     <div>
       <Header />
       {listState.length == 0 ? (
         <div className="noFavorites">
-          <img className="img-fluid" width="50%"  src={noMovieTrans} />
+          <img className="img-fluid" width="50%" src={noMovieTrans} />
         </div>
+      ) : displayState ? (
+        <Results2 movieState={movieState} />
       ) : (
         <Container flex={true}>
           {listState.length % 3 == 0 ? (
@@ -76,6 +96,7 @@ const Favorites = () => {
                     movie={movie}
                     listState={listState}
                     removeFavorite={removeFavorite}
+                    getMovieInfo={getMovieInfo}
                   />
                 </Col>
               ))}
@@ -88,6 +109,7 @@ const Favorites = () => {
                     movie={movie}
                     listState={listState}
                     removeFavorite={removeFavorite}
+                    getMovieInfo={getMovieInfo}
                   />
                 </Col>
               ))}
