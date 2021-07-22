@@ -60,7 +60,12 @@
 #buttonSign {
   padding-bottom: 4.5rem;
 }
+
 video {
   display: flex;
   margin: auto;
+}
+
+button:focus { 
+  outline: none; 
 }
