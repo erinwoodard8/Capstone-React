@@ -53,6 +53,10 @@ const ModalIn =() => {
         // console.log(movieInfo);
       }
 
+      const back = () => {
+        setDisplayState(false);
+      };
+
 
      return(
                 <Modal closeTimeoutMS={1500} className="modalDisplay" isOpen={modalIsOpen} ariaHideApp={false} onRequestClose = {()=>setModalIsOpen(false)} >
@@ -60,7 +64,7 @@ const ModalIn =() => {
                     {/* <br/> */}
                    
         
-                      {displayState ? <Results2 movieState={movieState} /> :
+                      {displayState ? <Results2 movieState={movieState} back={back} /> :
                   
                        <div className="card-div">
                          <div className="newRel">Now In Theaters</div>
