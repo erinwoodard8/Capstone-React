@@ -69,10 +69,8 @@ const Search = () => {
               <i class="fa fa-search"></i>
             </button>
           </div>
-
-          <div>
-            <Modal />
-          </div>
+        {movieState === undefined ?<div><Modal /></div> : <p></p> }
+     
 
           <div>
             <Container flex={true}>
