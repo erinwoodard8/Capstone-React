@@ -39,6 +39,7 @@ const Favorites = () => {
     }
   }
   async function removeFavorite(movie) {
+    console.log(movie);
     const userResponse = await fetch("http://localhost:8080/users/login", {
       method: "GET",
       credentials: "include",
