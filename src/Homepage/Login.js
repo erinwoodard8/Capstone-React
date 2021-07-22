@@ -16,7 +16,7 @@ const Login = () => {
         href="http://localhost:8080/oauth2/authorization/google"
       >
         <div id="buttonSign" className="rowLogin">
-          <button>Sign in with Google</button>
+          <button >Sign in with Google</button>
         </div>
       </a>
     </div>
