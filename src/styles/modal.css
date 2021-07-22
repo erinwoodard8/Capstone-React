@@ -6,17 +6,17 @@
   overflow-y: scroll;
   height:68%; 
   background-color: #0e3150;
-  padding-top: 10px;
+  /* padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 65px;
+  padding-left: 65px; */
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
 
   }
 
-   #newRel {
+   .newRel {
     text-align: center;
     font-family: 'Domine', serif;
-    font-size: 50px;
+    font-size: 3vw;
     color: #FFC0C2 ;
     font: bold;
   }
@@ -24,6 +24,7 @@
   .modalButt{
     float: right;
     margin-right: 10px;
+    margin-top: 10px;
     background-color: #d44b50;
     color: #0e3150;
     border: none;
@@ -45,4 +46,12 @@
   }
   .ReactModal__Overlay--before-close{
     opacity: 0;
+  }
+
+  .card-div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin:auto;
   }

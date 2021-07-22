@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/search.css";
 import { Row, Col, Container } from "react-bootstrap";
 import MovieCard from "../static/MovieCard";
@@ -44,10 +44,15 @@ const Search = () => {
     // console.log(movieInfo);
   }
 
+  const back = () => {
+    setDisplayState(false);
+    console.log("BOOOM");
+  };
+
   return (
     <div>
       {displayState ? (
-        <Results2 movieState={movieState} />
+        <Results2 movieState={movieState} back={back} />
       ) : (
         <div>
           <div className="textBox">

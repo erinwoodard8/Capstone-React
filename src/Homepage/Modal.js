@@ -13,9 +13,9 @@ const ModalIn =() => {
     const [movieState, setMovieState] = useState();
 
 
-    const setModalIsOpenToTrue =()=>{
-        setModalIsOpen(true)
-    }
+    // const setModalIsOpenToTrue =()=>{
+    //     setModalIsOpen(true)
+    // }
 
     const setModalIsOpenToFalse =()=>{
         setModalIsOpen(false)
@@ -55,13 +55,29 @@ const ModalIn =() => {
 
 
      return(
-                <Modal closeTimeoutMS={1500} className="modalDisplay" isOpen={modalIsOpen} onRequestClose = {()=>setModalIsOpen(false)} >
+                <Modal closeTimeoutMS={1500} className="modalDisplay" isOpen={modalIsOpen} ariaHideApp={false} onRequestClose = {()=>setModalIsOpen(false)} >
                     <Button className="modalButt" onClick={setModalIsOpenToFalse}>Close</Button>
-                    <div id="newRel">Now In Theaters</div>
+                    {/* <br/> */}
+                   
+        
+                      {displayState ? <Results2 movieState={movieState} /> :
+                  
+                       <div className="card-div">
+                         <div className="newRel">Now In Theaters</div>
+                       {inTheaterState.map((movie) => (
+                      
+                           <MovieCard movie={movie} getMovieInfo={getMovieInfo}/>
+                       
+                       ))}
+                   
+                   </div>
+                   }
+                   
 
-                    <Container flex={true}>
+                    {/* <Container flex={true}>
                         {displayState ? <Results2 movieState={movieState} /> :
                         inTheaterState.length % 3 == 0 ? (
+                        <div>
                         <Row className="row justify-content-md-center">
                             {inTheaterState.map((movie) => (
                             <Col className="justify-content-md-center">
@@ -70,6 +86,8 @@ const ModalIn =() => {
                             ))}
                         
                         </Row>
+                        </div>
+
                         ) : (
                         <Row className="row justify-content-md-center">
                             {inTheaterState.map((movie) => (
@@ -80,7 +98,7 @@ const ModalIn =() => {
                             <Col></Col>
                         </Row>
                         )}
-                    </Container>
+                    </Container> */}
 
                 </Modal>
             )

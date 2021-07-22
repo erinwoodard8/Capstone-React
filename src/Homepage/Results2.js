@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../styles/results.css";
 
-const Results2 = ({movieState}) => {
+
+const Results2 = ({movieState, back}) => {
+  
   const [userState, setUserState] = useState({});
+
+
 
   useEffect(() => {
     getUser();
@@ -55,6 +59,7 @@ const Results2 = ({movieState}) => {
             className="img-fluid"
             max-width="50%"
             src={movieState.image} alt="img"
+
           />
         </div>
 
@@ -76,7 +81,6 @@ const Results2 = ({movieState}) => {
             <p className="info-text">{movieState.stars}</p>
             <p className="header-text">Genres:</p>
             <p className="info-text">{movieState.genres}</p>
-
             <br></br>
             <p className="header-text"> Plot: </p>
             <p className="info-text">{movieState.plot}</p>
@@ -89,6 +93,8 @@ const Results2 = ({movieState}) => {
           >
             Add to favorite{" "}
           </button>
+
+          <button onClick={back}>BACK</button>
         </div>
 
         <div className="col-md-1"></div>
