@@ -1,5 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Domine&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Sofia&effect=fire");
 
 .main-container {
   margin-top: 15px;
@@ -9,7 +10,7 @@
   color: #ffc0c2;
   font-family: "Domine", serif;
   text-align: center;
-  border-radius: 5%;
+  margin:30px;
   padding-bottom: 15px;
 }
 
@@ -19,6 +20,7 @@
   content: "";
   clear: both;
   display: table;
+  
 }
 
 .img-container {
@@ -35,6 +37,12 @@
   font-size: 50px;
   margin-bottom: 0%;
   padding-bottom: 0%;
+  color:rgba(253, 187, 45, 1)!important;
+  font-family: "Georgia", sans-serif!important;
+  font-weight: bold!important;
+  /* text-shadow: 2px 2px px rgb(178, 178, 233); */
+  text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+
 }
 
 .time {
@@ -44,7 +52,9 @@
 }
 
 .header-text {
-  font-size: 26px;
+    font-size: 26px;
+    margin-bottom: 0%;
+    color:rgb(147, 245, 246)!important;
 }
 
 .info-text {
@@ -53,16 +63,17 @@
 
 .displayInfo {
   font-size: 30px;
+
 }
 
 .resultsBtn {
-  background-color: #ffc0c2;
+  background-color: rgba(253, 187, 45, 1);
   color: #0e3150;
-  border: 1px solid #ffc0c2;
+  border: 1px solid rgba(253, 187, 45, 1);
 }
 
 .resultsBtn:hover {
   background-color: #0e3150;
-  color: #ffc0c2;
-  border: 1px solid #ffc0c2;
+  color: rgba(253, 187, 45, 1) ;
+  border: 1px solid rgba(253, 187, 45, 1);
 }
