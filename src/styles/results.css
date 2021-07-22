@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Sofia&effect=fire");
 
 .main-container {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 .info-container {
   background-color: #0e3150;
@@ -12,7 +12,6 @@
   text-align: center;
   margin:30px;
   padding-bottom: 15px;
-  
 }
 
 .displayInfo::after {
@@ -56,11 +55,10 @@
     font-size: 26px;
     margin-bottom: 0%;
     color:rgb(147, 245, 246)!important;
-   
 }
 
 .info-text {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .displayInfo {

@@ -13,7 +13,7 @@ const MovieCard = ({ movie, listState, removeFavorite, getMovieInfo }) => {
         if (listState[i].id.includes(movie.id)) {
           return (
             <Button
-              onClick={(movie) => removeFavorite(movie)}
+              onClick={() => removeFavorite(movie)}
               className="card-button"
             >
               Remove

@@ -46,7 +46,7 @@ const Results2 = ({movieState}) => {
   }
 
   return (
-    <div className="container-fluid main-container">
+    <div className="main-container">
       <div className="row">
         <div className="col-md-1"></div>
 
