@@ -77,6 +77,10 @@ const Favorites = () => {
     // console.log(movieInfo);
   }
 
+  const back = () => {
+    setDisplayState(false);
+  };
+
   return (
     <div>
       <Header />
@@ -85,7 +89,7 @@ const Favorites = () => {
           <img className="img-fluid" width="50%" src={noMovieTrans} />
         </div>
       ) : displayState ? (
-        <Results2 movieState={movieState} />
+        <Results2 movieState={movieState} back={back} />
       ) : (
         <Container flex={true}>
           {listState.length % 3 == 0 ? (
