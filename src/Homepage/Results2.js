@@ -56,7 +56,7 @@ const Results2 = (movieState) => {
           <img
             className="img-fluid"
             max-width="50%"
-            src={movieState.movieState.image}
+            src={movieState.movieState.image} alt="img"
           />
         </div>
 
@@ -68,16 +68,21 @@ const Results2 = (movieState) => {
           <p className="time">
             {" "}
             {movieState.movieState.year} | {movieState.movieState.runtimeMins}{" "}
-            min{" "}
+            min{" "} | {movieState.movieState.contentRating}{" "}| {movieState.movieState.genres}{" "}
           </p>
 
           <div>
-            <p className="header-text">Award:</p>
-            <p className="info-text">{movieState.movieState.awards}</p>
+            <p className="header-text">Directors:</p>
+            <p className="info-text">{movieState.movieState.directors}</p>
+            
+            <p className="header-text">Stars:</p>
+            <p className="info-text">{movieState.movieState.stars}</p>
+
             <br></br>
             <p className="header-text"> Plot: </p>
             <p className="info-text">{movieState.movieState.plot}</p>
           </div>
+          <br></br>
           <button
             type="button"
             class="btn btn-warning resultsBtn"

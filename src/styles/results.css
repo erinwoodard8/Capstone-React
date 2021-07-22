@@ -10,9 +10,9 @@
   color: #ffc0c2;
   font-family: "Domine", serif;
   text-align: center;
-  border-radius:5%;
+  margin:30px;
   padding-bottom: 15px;
-
+  
 }
 
 .displayInfo::after {
@@ -21,6 +21,7 @@
   content: "";
   clear: both;
   display: table;
+  
 }
 
 .img-container {
@@ -29,12 +30,18 @@
   color: #ffc0c2;
   font-family: "Domine", serif;
   margin: auto;
+  max-width:500px;
+  text-align: center;
 }
 
 .movieTitle {
   font-size: 50px;
   margin-bottom: 0%;
   padding-bottom: 0%;
+  color:rgb(147, 245, 246)!important;
+  font-weight: bold!important;
+  text-shadow: 5px 5px 10px rgb(178, 178, 233);
+
 }
 
 .time {
@@ -45,6 +52,9 @@
 
 .header-text {
     font-size: 26px;
+    margin-bottom: 0%;
+    color:rgb(147, 245, 246)!important;
+   
 }
 
 .info-text {
@@ -53,16 +63,17 @@
 
 .displayInfo {
   font-size: 30px;
+
 }
 
 .resultsBtn {
-  background-color: #ffc0c2;
+  background-color: rgba(253, 187, 45, 1);
   color: #0e3150;
-  border: 1px solid #ffc0c2;
+  border: 1px solid rgba(253, 187, 45, 1);
 }
 
 .resultsBtn:hover {
   background-color: #0e3150;
-  color: #ffc0c2;
-  border: 1px solid #ffc0c2;
+  color: rgba(253, 187, 45, 1) ;
+  border: 1px solid rgba(253, 187, 45, 1);
 }
