@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../styles/results.css";
 
+
 const Results2 = ({movieState, back}) => {
+  
   const [userState, setUserState] = useState({});
 
 
@@ -9,8 +11,6 @@ const Results2 = ({movieState, back}) => {
   useEffect(() => {
     getUser();
   }, []);
-
-  console.log(movieState.title);
 
   async function getUser() {
     const response = await fetch("http://localhost:8080/users/login", {
@@ -58,7 +58,8 @@ const Results2 = ({movieState, back}) => {
           <img
             className="img-fluid"
             max-width="50%"
-            src={movieState.image}
+            src={movieState.image} alt="img"
+
           />
         </div>
 
@@ -67,19 +68,24 @@ const Results2 = ({movieState, back}) => {
           //   className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "
         >
           <p className="movieTitle">{movieState.title} </p>
-          <p className="time">
-            {" "}
+          <p className="time">{" "}
             {movieState.year} | {movieState.runtimeMins}{" "}
-            min{" "}
+            min{" "} | {movieState.contentRating}
           </p>
 
           <div>
-            <p className="header-text">Award:</p>
-            <p className="info-text">{movieState.awards}</p>
+            <p className="header-text">Directors:</p>
+            <p className="info-text">{movieState.directors}</p>
+            
+            <p className="header-text">Stars:</p>
+            <p className="info-text">{movieState.stars}</p>
+            <p className="header-text">Genres:</p>
+            <p className="info-text">{movieState.genres}</p>
             <br></br>
             <p className="header-text"> Plot: </p>
             <p className="info-text">{movieState.plot}</p>
           </div>
+          <br></br>
           <button
             type="button"
             class="btn btn-warning resultsBtn"

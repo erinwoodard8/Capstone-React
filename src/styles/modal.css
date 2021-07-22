@@ -3,7 +3,7 @@
   top:30%;
   left:25%;
   width:50%;
-  overflow: scroll;
+  overflow-y: scroll;
   height:68%; 
   background-color: #0e3150;
   /* padding-top: 10px;
@@ -25,7 +25,7 @@
     float: right;
     margin-right: 10px;
     margin-top: 10px;
-    background-color: #FFC0C2;
+    background-color: #d44b50;
     color: #0e3150;
     border: none;
     font-weight: bold;
