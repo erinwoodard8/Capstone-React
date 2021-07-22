@@ -51,6 +51,7 @@ const Search = () => {
 
   return (
     <div>
+      <h1>test</h1>
       {displayState ? (
         <Results2 movieState={movieState} back={back} />
       ) : (
