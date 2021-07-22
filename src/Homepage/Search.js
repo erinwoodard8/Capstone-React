@@ -46,7 +46,6 @@ const Search = () => {
 
   const back = () => {
     setDisplayState(false);
-    console.log("BOOOM");
   };
 
   return (
