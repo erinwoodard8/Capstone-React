@@ -12,11 +12,8 @@ const MovieCard = ({ movie, listState, removeFavorite, getMovieInfo }) => {
       for (let i = 0; i < listState.length; i++) {
         if (listState[i].id.includes(movie.id)) {
           return (
-            <Button
-              onClick={() => removeFavorite(movie)}
-              className="card-button"
-            >
-              Remove
+            <Button onClick={() => removeFavorite(movie)}className="card-button">
+              <i class="fa fa-trash fa-2x fa-del " aria-hidden="true"></i>
             </Button>
           );
         }
@@ -33,7 +30,7 @@ const MovieCard = ({ movie, listState, removeFavorite, getMovieInfo }) => {
       <Card.Body className="card-body">
         <Card.Title>{movie.title}</Card.Title>
         {buttonRender()}
-        <Button onClick={() => getMovieInfo(movie)}>More Info</Button>
+        <Button className="moreInfoBtn" onClick={() => getMovieInfo(movie)}>More Info</Button>
       </Card.Body>
     </Card>
   );

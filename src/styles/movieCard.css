@@ -1,3 +1,6 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
 .card-container {
     display: flex;
     max-width: 600px;
@@ -24,13 +27,41 @@
 }
 
 .card-button{
-    background-color: #FFC0C2;
+    background-color:transparent;
     color: #0e3150;
-    border: 1px solid #FFC0C2;
+    border: none;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0%;
+    border-radius: 30%;
 }
 
-.card-button:hover{
+.fa-del{
+    background-color: #d44b50;
+    border-radius: 10%;
+
+}
+
+.fa-del:hover{
     background-color: #0e3150;
-    color: #FFC0C2;
-    border: 1px solid #FFC0C2 ;
+    color:rgba(253, 187, 45, 1);
+    border: 1px solid rgba(253, 187, 45, 1); 
+}
+
+.moreInfoBtn{
+
+    background-color: rgba(253, 187, 45, 1);
+    color: #0e3150;
+    border: 1px solid rgba(253, 187, 45, 1);
+    font-weight: bold;
+
+}
+
+.moreInfoBtn:hover{
+    background-color: #0e3150;
+    color: rgba(253, 187, 45, 1) ;
+    border: 1px solid rgba(253, 187, 45, 1);
+    font-weight: bold;
 }
