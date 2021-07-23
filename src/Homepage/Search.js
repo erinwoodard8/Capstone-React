@@ -17,7 +17,8 @@ const Search = () => {
     console.log(event.target.value);
   };
 
-  async function getMovieResults() {
+  async function getMovieResults(e) {
+    e.preventDefault();
     let title = titleState;
     const idResponse = await fetch(
       "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
@@ -55,19 +56,22 @@ const Search = () => {
       ) : (
         <div>
           <div className="textBox">
+            <form>
+
             <input
               type="text"
               id="searchBar"
               placeholder="Search for a Movie Title..."
               onChange={handleChange}
-            />
+              />
             <button
               onClick={getMovieResults}
-              type="button"
+              type="submit"
               className="submitButt"
-            >
+              >
               <i class="fa fa-search"></i>
             </button>
+             </form>
           </div>
         {movieState === undefined ?<div><Modal /></div> : <p></p> }
      
