@@ -1,5 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-
+@import url('https://allfont.net/allfont.css?fonts=dosis-extrabold');
+@import url("https://fonts.googleapis.com/css2?family=Domine&display=swap");
 
 .card-container {
     display: flex;
@@ -11,9 +12,17 @@
     margin-left: 20px;
     margin-top:50px;
     align-items: center;
-    border-radius:5%;
+    border-radius:5px;
+    border-color: rgb(253, 187, 45);
     background-color:rgba(0,0,0,.7);
     color: #FFC0C2; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+.card-title {
+    /* font-weight: bold; */
+    font-size: 28px;
+    font-family: 'Dosis ExtraBold', arial;
 }
 
 .card-image{
@@ -26,7 +35,7 @@
     text-align: center;
 }
 
-.card-button{
+.delete-button{
     background-color:transparent;
     color: #0e3150;
     border: none;
@@ -56,6 +65,7 @@
     color: #0e3150;
     border: 1px solid rgba(253, 187, 45, 1);
     font-weight: bold;
+    font-family: "Domine", serif;
 
 }
 

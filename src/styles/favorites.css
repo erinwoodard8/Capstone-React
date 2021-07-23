@@ -1,28 +1,19 @@
-/* .noFavorites { */
-    /* margin:auto; */
-    /* display: flex !important;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    text-decoration-color: crimson; */
-    /* color: rgb(250, 7, 39); */
-    /* font-size: 30px; */
-    /* margin-left: 50% !important; */
-    /* margin-top: 250px !important;
-    margin-bottom: 5px !important; */
-/* } */
-/* .Panther .noFavorites{ 
-    /* height: 5%; background-position: center; */
-    /* background-repeat: no-repeat;
-    background-size: cover; */
-    /* background-image: url("https://hdqwalls.com/wallpapers/black-panther-artwork-2018-hd-9y.jpg"); */
+@import url('https://allfont.net/allfont.css?fonts=dosis-extrabold');
 
-/* } */ 
-  
-/* body, html {
-    /* image-rendering: auto !important; */
-    /* background-image: url("https://hdqwalls.com/wallpapers/black-panther-artwork-2018-hd-9y.jpg"); */
-  /* } */ 
+
+.favorites-head {
+  font-size: 60px;
+  font-family: 'Dosis ExtraBold', arial;
+  color:rgb(253, 187, 45);
+  background-color: rgba(0,0,0,.5);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+}
 
   .noFavorites {
     text-align: center;
@@ -33,6 +24,7 @@
     width: 45%;
     /* height: 50%; */
     border-radius: 5%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
   }
   
   

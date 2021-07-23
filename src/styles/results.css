@@ -13,6 +13,7 @@
   text-align: center;
   margin:30px;
   padding-bottom: 15px;
+  /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7); */
 }
 
 .displayInfo::after {
@@ -27,11 +28,13 @@
 .img-container {
   background-color: transparent;
   border: none;
-  color: #ffc0c2;
+  color: rgb(253, 187, 45);
   font-family: "Domine", serif;
   margin: auto;
   max-width:500px;
   text-align: center;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+  padding:0;
 }
 
 .movieTitle {
@@ -84,18 +87,25 @@
 }
 
 .backBtn{
-
   background-color: #0e3150;
   border: none;
   text-align: center;
-  margin: 1px;
+  margin-top:10px;
+  /* margin: 1px; */
   float:left;
-  
 }
+
+
 
 .fa-cog {
   color: rgba(253, 187, 45, 1);
   background-color:  #0e3150;
   left: 100%;
+}
+
+.fa-cog:hover {
+  color:#0e3150;
+  background-color: rgb(253, 187, 45);
+  cursor: pointer;
 }
 

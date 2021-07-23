@@ -11,6 +11,8 @@ const Favorites = () => {
   const [renderState, setRenderState] = useState(true);
   const [displayState, setDisplayState] = useState(false);
   const [movieState, setMovieState] = useState();
+  const [userState, setUserState] = useState();
+  const [backButtState, setBackButtState] = useState(true);
 
   useEffect(() => {
     getFavorites();
@@ -22,6 +24,7 @@ const Favorites = () => {
       credentials: "include",
     });
     const user = await response.json();
+    setUserState(user);
     let favorites = user.favoriteMovies;
     let movieList = [];
     console.log(favorites);
@@ -42,12 +45,12 @@ const Favorites = () => {
     }
   }
   async function removeFavorite(movie) {
-    console.log(movie);
-    const userResponse = await fetch("http://localhost:8080/users/login", {
-      method: "GET",
-      credentials: "include",
-    });
-    const user = await userResponse.json();
+    // console.log(movie);
+    // const userResponse = await fetch("http://localhost:8080/users/login", {
+    //   method: "GET",
+    //   credentials: "include",
+    // });
+    const user = userState;
     const favorites = user.favoriteMovies;
     const movieIndex = favorites.indexOf(movie.id);
     favorites.splice(movieIndex, 1);
@@ -81,6 +84,7 @@ const Favorites = () => {
     setDisplayState(false);
   };
 
+
   return (
     <div>
       <Header />
@@ -89,9 +93,10 @@ const Favorites = () => {
           <img className="img-fluid" src={noMovieTrans} />
         </div>
       ) : displayState ? (
-        <Results2 movieState={movieState} back={back} />
+        <Results2 movieState={movieState} back={back} backButtState={backButtState} />
       ) : (
         <Container flex={true}>
+          <div className="favorites-head">{userState.username}'s Favorite Movies</div>
           {listState.length % 3 == 0 ? (
             <Row className="row justify-content-md-center">
               {listState.map((movie) => (

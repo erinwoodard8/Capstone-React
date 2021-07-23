@@ -5,7 +5,7 @@
   width:50%;
   overflow-y: scroll;
   height:68%; 
-  background-color: #0e3150;
+  background-color: rgba(14, 49, 80, 1);
   /* padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 65px; */
@@ -28,7 +28,7 @@
     margin-top: 10px;
     background-color: #d44b50;
     color: #0e3150;
-    border: none;
+    border-color: #d44b50;
     font-weight: bold;
     font-family: 'Domine', serif;
   }
