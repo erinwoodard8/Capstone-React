@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import MyflixLogo4 from "../static/MyflixLogo4.png";
 import "../styles/login.css";
 import videos from "../styles/videos.mp4";
@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div id="loginform">
       <video autoPlay loop muted={true} height="150px" width="300px">
-        <source src={videos} type="video/mp4"/>
+        <source src={videos} type="video/mp4" />
       </video>
       <div className="imageLogo">
         <img src={MyflixLogo4} alt="Logo" />

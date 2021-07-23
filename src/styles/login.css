@@ -19,8 +19,6 @@
   max-height: 50%;
   display: inline-block;
   align-self: center;
-  /* margin-bottom: 20%;
-      margin-top: 20%; */
 }
 .rowLogin {
   display: flex;
@@ -30,7 +28,6 @@
   padding-bottom: 1rem;
   padding-left: 4 rem;
   padding-right: 4 rem;
-  /* max-width: 100%; */
 }
 
 .rowLogin button {
@@ -39,8 +36,6 @@
   height: 40px;
   font-size: 1.3rem;
   color: #0e3150;
-  
-  /* font-weight: bolder; */
   font-family: 'Dosis ExtraBold', arial;
   background: #6DC9C8;
   border: 0px;

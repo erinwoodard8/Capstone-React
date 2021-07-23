@@ -73,14 +73,12 @@ const Results = ({ movieState, back, backButtState }) => {
           ) : (
             <p></p>
           )}
-
           <p className="movieTitle">{movieState.title} </p>
           <p className="time">
             {" "}
             {movieState.year} | {movieState.runtimeMins} min |{" "}
             {movieState.contentRating}
           </p>
-
           <div>
             <p className="header-text">Directors:</p>
             <p className="info-text">{movieState.directors}</p>
@@ -100,8 +98,7 @@ const Results = ({ movieState, back, backButtState }) => {
             onClick={saveMovie}
           >
             Add to Favorites{" "}
-          </button>
-          {" "}
+          </button>{" "}
           {!backButtState ? (
             <button
               type="button"
