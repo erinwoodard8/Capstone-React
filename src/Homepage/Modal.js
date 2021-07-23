@@ -77,33 +77,6 @@ const ModalIn =() => {
                    </div>
                    }
                    
-
-                    {/* <Container flex={true}>
-                        {displayState ? <Results2 movieState={movieState} /> :
-                        inTheaterState.length % 3 == 0 ? (
-                        <div>
-                        <Row className="row justify-content-md-center">
-                            {inTheaterState.map((movie) => (
-                            <Col className="justify-content-md-center">
-                                <MovieCard movie={movie} getMovieInfo={getMovieInfo}/>
-                            </Col>
-                            ))}
-                        
-                        </Row>
-                        </div>
-
-                        ) : (
-                        <Row className="row justify-content-md-center">
-                            {inTheaterState.map((movie) => (
-                            <Col className="justify-content-md-center">
-                                <MovieCard movie={movie} getMovieInfo={getMovieInfo} />
-                            </Col>
-                            ))}
-                            <Col></Col>
-                        </Row>
-                        )}
-                    </Container> */}
-
                 </Modal>
             )
 };
