@@ -31,8 +31,11 @@ a.nav-link:hover:not(.user) {
 
 .user:hover {
   cursor: default !important ;
- }
-
+}
+/* .userColor{
+  color: rgb(253, 187, 45);
+  text-decoration-color: darkorange !important;
+} */
   
   .logo-image{
     width: 6px;
