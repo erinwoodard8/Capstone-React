@@ -31,8 +31,12 @@ const Results2 = ({movieState, back}) => {
     if (user.favoriteMovies == null) {
       user.favoriteMovies = [movieId];
     } else {
+       if(user.favoriteMovies.includes(movieId)){
+         alert("You've already favorited this!")
+       } else {  
       user.favoriteMovies.push(movieId);
-      alert("movie has been added to favorites");
+      alert("Movie was added to Favorites!");
+       }
     }
     // console.log(user.favoriteMovies);
 
