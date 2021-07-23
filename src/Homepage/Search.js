@@ -3,7 +3,7 @@ import "../styles/search.css";
 import { Row, Col, Container } from "react-bootstrap";
 import MovieCard from "../static/MovieCard";
 import Modal from "../Homepage/Modal";
-import Results2 from "../Homepage/Results2";
+import Results from "../Homepage/Results";
 import MyflixLogo4 from "../static/MyflixLogo4.png";
 
 const Search = () => {
@@ -54,7 +54,7 @@ const Search = () => {
   return (
     <div>
       {displayState ? (
-        <Results2 movieState={movieState} back={back} backButtState={backButtState} />
+        <Results movieState={movieState} back={back} backButtState={backButtState} />
       ) : (
         <div>
           <div className="textBox">

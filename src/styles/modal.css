@@ -1,6 +1,6 @@
   .modalDisplay {
    position:relative;
-  top:30%;
+  top:25%;
   left:25%;
   width:50%;
   overflow-y: scroll;
@@ -20,6 +20,7 @@
     color: #FFC0C2 ;
     font: bold;
     width: 100%;
+    margin-top:10px;
   }
 
   .modalButt{

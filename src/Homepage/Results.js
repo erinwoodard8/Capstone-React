@@ -1,49 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "../styles/results.css";
 
-const Results = () => {
-  const [movieState, setMovieState] = useState({});
-  const [titleState, setTitleState] = useState("");
-  const [userState, setUserState] = useState({
-    id: "",
-    username: "",
-    email: "",
-    favoriteMovies: [""],
-  });
-
-  const handleChange = (event) => {
-    setTitleState(event.target.value);
-    console.log(event.target.value);
-  };
+const Results = ({ movieState, back, backButtState }) => {
+  const [userState, setUserState] = useState({});
 
   useEffect(() => {
     getUser();
   }, []);
-
-  // IF THE RESPONSE IS NULL YOU NEED TO USE A DIFFERENT API KEY BECAUSE OF THE REQUEST LIMIT (k_2whi6r49 OR k_sf4k7xi2 OR k_7mrq9eci OR k_q83az6pl)
-  async function getMovie() {
-    let title = titleState;
-    const idResponse = await fetch(
-      "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
-      {
-        method: "GET",
-      }
-    );
-    const movie = await idResponse.json();
-    const movieId = await movie.results[0].id;
-    console.log(await movie);
-    console.log("MOVIE ID: " + movieId);
-
-    const movieResponse = await fetch(
-      "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
-      {
-        method: "GET",
-      }
-    );
-    const movieInfo = await movieResponse.json();
-    const newMovieState = movieInfo;
-    setMovieState(newMovieState);
-  }
 
   async function getUser() {
     const response = await fetch("http://localhost:8080/users/login", {
@@ -64,10 +27,14 @@ const Results = () => {
     if (user.favoriteMovies == null) {
       user.favoriteMovies = [movieId];
     } else {
-      user.favoriteMovies.push(movieId);
-      alert("movie has been added to favorites");
+      if (user.favoriteMovies.includes(movieId)) {
+        alert("You've already favorited this!");
+      } else {
+        user.favoriteMovies.push(movieId);
+        alert("Movie was added to Favorites!");
+      }
     }
-    // console.log(user.favoriteMovies);
+
     const response = await fetch("http://localhost:8080/users/favorites", {
       method: "POST",
       credentials: "include",
@@ -82,67 +49,74 @@ const Results = () => {
   }
 
   return (
-    <div>
-      <div className="textBox">
-        <input
-          type="text"
-          id="searchBar"
-          placeholder="Search for a Movie Title..."
-          onChange={handleChange}
-          // value={titleState}
-        />
-        <button onClick={getMovie} type="button" className="submitButt">
-          <i class="fa fa-search"></i>
-        </button>
+    <div className="main-container">
+      <div className="row">
+        <div className="col-md-1"></div>
 
-        <form>
-          <br></br>
-          <br></br>
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-1"></div>
+        <div className="col-md-3 img-container">
+          <img
+            className="img-fluid"
+            max-width="50%"
+            src={movieState.image}
+            alt="img"
+          />
+        </div>
 
-              <div
-                id="imageBg"
-                className="col-md-3 card p-2 border-right-0 img-responsive center-block d-block mx-auto"
-              >
-                <img className="img-fluid" width="80%" src={movieState.image} />
-              </div>
+        <div className="col-md-7 info-container">
+          {backButtState ? (
+            <button className="backBtn" onClick={back}>
+              <i
+                class="fa fa-arrow-circle-left fa-cog fa-3x"
+                aria-hidden="true"
+              ></i>
+            </button>
+          ) : (
+            <p></p>
+          )}
 
-              <div
-                id="textColor"
-                className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "
-              >
-                <p className="movieTitle">{movieState.title} </p>
-                <p className="time">
-                  {" "}
-                  {movieState.year} | {movieState.runtimeMins} min{" "}
-                </p>
+          <p className="movieTitle">{movieState.title} </p>
+          <p className="time">
+            {" "}
+            {movieState.year} | {movieState.runtimeMins} min |{" "}
+            {movieState.contentRating}
+          </p>
 
-                <div>
-                  <h2>Award:</h2>
-                  <h4>{movieState.awards}</h4>
-                  <br></br>
-                  <h2> Plot: </h2>
-                  <h4>{movieState.plot}</h4>
-                </div>
-                <button
-                  type="button"
-                  class="btn btn-warning resultsBtn"
-                  onClick={saveMovie}
-                >
-                  Add to Favorites{" "}
-                </button>
-              </div>
+          <div>
+            <p className="header-text">Directors:</p>
+            <p className="info-text">{movieState.directors}</p>
 
-              <div className="col-md-1"></div>
-            </div>
+            <p className="header-text">Stars:</p>
+            <p className="info-text">{movieState.stars}</p>
+            <p className="header-text">Genres:</p>
+            <p className="info-text">{movieState.genres}</p>
+            <br></br>
+            <p className="header-text"> Plot: </p>
+            <p className="info-text">{movieState.plot}</p>
           </div>
-        </form>
-      </div>
+          <br></br>
+          <button
+            type="button"
+            className="btn btn-warning resultsBtn"
+            onClick={saveMovie}
+          >
+            Add to Favorites{" "}
+          </button>
+          {" "}
+          {!backButtState ? (
+            <button
+              type="button"
+              className="btn btn-warning resultsBtn"
+              onClick={back}
+            >
+              Back To In Theaters{" "}
+            </button>
+          ) : (
+            <p></p>
+          )}
+        </div>
 
-      {/* <button onClick={getUser}>GET USER</button> */}
-      {/* <button onClick={saveMovie}>SAVE MOVIE</button> */}
+        <div className="col-md-1"></div>
+      </div>
     </div>
   );
 };

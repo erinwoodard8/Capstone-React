@@ -4,7 +4,7 @@ import MovieCard from "../static/MovieCard";
 import "../styles/favorites.css";
 import { Row, Col, Container } from "react-bootstrap";
 import noMovieTrans from "../static/noMovieTrans.png";
-import Results2 from "../Homepage/Results2";
+import Results from "../Homepage/Results";
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
@@ -93,7 +93,7 @@ const Favorites = () => {
           <img className="img-fluid" src={noMovieTrans} />
         </div>
       ) : displayState ? (
-        <Results2 movieState={movieState} back={back} backButtState={backButtState} />
+        <Results movieState={movieState} back={back} backButtState={backButtState} />
       ) : (
         <Container flex={true}>
           <div className="favorites-head">{userState.username}'s Favorite Movies</div>
