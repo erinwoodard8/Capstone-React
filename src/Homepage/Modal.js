@@ -11,6 +11,7 @@ const ModalIn =() => {
     const [modalIsOpen,setModalIsOpen] = useState(false);
     const [displayState, setDisplayState] = useState(false);
     const [movieState, setMovieState] = useState();
+    const [backButtState, setBackButtState] = useState(false);
 
 
     // const setModalIsOpenToTrue =()=>{
@@ -63,7 +64,7 @@ const ModalIn =() => {
                     <Button className="modalButt" onClick={setModalIsOpenToFalse}>Close</Button>
                                  
         
-                      {displayState ? <Results2 movieState={movieState} back={back} /> :
+                      {displayState ? <Results2 movieState={movieState} back={back} backButtState={backButtState} /> :
                   
                        <div className="card-div">
                          <div className="newRel">Now In Theaters</div>

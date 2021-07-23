@@ -11,6 +11,7 @@ const Search = () => {
   const [movieState, setMovieState] = useState();
   const [titleState, setTitleState] = useState("");
   const [displayState, setDisplayState] = useState(false);
+  const [backButtState, setBackButtState] = useState(true);
 
   const handleChange = (event) => {
     setTitleState(event.target.value);
@@ -52,7 +53,7 @@ const Search = () => {
   return (
     <div>
       {displayState ? (
-        <Results2 movieState={movieState} back={back} />
+        <Results2 movieState={movieState} back={back} backButtState={backButtState} />
       ) : (
         <div>
           <div className="textBox">
