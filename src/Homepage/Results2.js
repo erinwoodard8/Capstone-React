@@ -99,7 +99,7 @@ const Results2 = ({ movieState, back, backButtState }) => {
             className="btn btn-warning resultsBtn"
             onClick={saveMovie}
           >
-            Add to favorite{" "}
+            Add to Favorites{" "}
           </button>
           {" "}
           {!backButtState ? (
