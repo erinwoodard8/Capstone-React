@@ -38,7 +38,7 @@ const Results2 = ({movieState, back}) => {
       alert("Movie was added to Favorites!");
        }
     }
-    // console.log(user.favoriteMovies);
+
 
     const response = await fetch("http://localhost:8080/users/favorites", {
       method: "POST",

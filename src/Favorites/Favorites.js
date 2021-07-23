@@ -86,7 +86,7 @@ const Favorites = () => {
       <Header />
       {listState.length == 0 ? (
         <div className="noFavorites">
-          <img className="img-fluid" width="50%" src={noMovieTrans} />
+          <img className="img-fluid" src={noMovieTrans} />
         </div>
       ) : displayState ? (
         <Results2 movieState={movieState} back={back} />
