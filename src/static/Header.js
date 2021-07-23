@@ -40,7 +40,7 @@ const Header = () => {
       <Nav>
       <Nav.Link href="/">Search</Nav.Link>
       <Nav.Link href="/favorites">Favorites</Nav.Link>
-      <Nav.Link className="user">Logged in as: {userState.username}</Nav.Link>
+      <Nav.Link className="user" class="text-warning"><p class="text-warning">Logged in as: {userState.username}</p></Nav.Link>
     </Nav>
     </Navbar.Collapse>
     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
