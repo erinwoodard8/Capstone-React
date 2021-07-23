@@ -33,7 +33,7 @@ const Header = () => {
    
 <div>
   
-<Navbar  className="nav" expand="lg">
+<Navbar  className="nav fixed-top " expand="lg">
   <Navbar.Brand href="/"><img class="logo-image" src={MyflixLogo4} class="img-fluid" width="50"/></Navbar.Brand>
     <Navbar.Toggle className="hamburger" aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-start">

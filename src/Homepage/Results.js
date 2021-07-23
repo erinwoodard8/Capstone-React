@@ -63,11 +63,9 @@ const Results = () => {
     let user = userState;
     if (user.favoriteMovies == null) {
       user.favoriteMovies = [movieId];
-
     } else {
       user.favoriteMovies.push(movieId);
-      alert("movie has been added to favorites")
-
+      alert("movie has been added to favorites");
     }
     // console.log(user.favoriteMovies);
     const response = await fetch("http://localhost:8080/users/favorites", {
@@ -128,7 +126,13 @@ const Results = () => {
                   <h2> Plot: </h2>
                   <h4>{movieState.plot}</h4>
                 </div>
-                <button type="button" class="btn btn-warning resultsBtn" onClick={saveMovie}>Add to favorite </button>
+                <button
+                  type="button"
+                  class="btn btn-warning resultsBtn"
+                  onClick={saveMovie}
+                >
+                  Add to Favorites{" "}
+                </button>
               </div>
 
               <div className="col-md-1"></div>
