@@ -40,16 +40,14 @@ const Header = () => {
       <Nav>
       <Nav.Link href="/">Search</Nav.Link>
       <Nav.Link href="/favorites">Favorites</Nav.Link>
-      <Nav.Link className="user" class="text-warning"><p class="text-warning">Logged in as: {userState.username}</p></Nav.Link>
     </Nav>
     </Navbar.Collapse>
+
     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
       <Nav>
-        <Navbar.Text>
-              <Nav.Link href="http://localhost:8080/logout">Logout</Nav.Link>
-      </Navbar.Text>
+        <Nav.Link className="user text-warning pb-0"><p class="text-warning">Logged in as: {userState.username}</p></Nav.Link>
+        <Nav.Link href="http://localhost:8080/logout">Logout</Nav.Link>
       </Nav>
-      
     </Navbar.Collapse>
 </Navbar>
 </div>
