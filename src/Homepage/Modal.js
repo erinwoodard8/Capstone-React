@@ -3,7 +3,7 @@ import "../styles/modal.css";
 import Modal from 'react-modal';
 import { Row, Col, Container,Button } from "react-bootstrap";
 import MovieCard from "../static/MovieCard";
-import Results2 from "./Results2";
+import Results from "./Results";
 
 
 const ModalIn =() => {
@@ -64,7 +64,7 @@ const ModalIn =() => {
                     <Button className="modalButt" onClick={setModalIsOpenToFalse}>Close</Button>
                                  
         
-                      {displayState ? <Results2 movieState={movieState} back={back} backButtState={backButtState} /> :
+                      {displayState ? <Results movieState={movieState} back={back} backButtState={backButtState} /> :
                   
                        <div className="card-div">
                          <div className="newRel">Now In Theaters</div>
