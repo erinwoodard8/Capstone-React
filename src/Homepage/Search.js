@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "../styles/search.css";
 import { Row, Col, Container } from "react-bootstrap";
 import MovieCard from "../static/MovieCard";
-import Header from "../static/Header";
 import Modal from "../Homepage/Modal";
 import Results2 from "../Homepage/Results2";
+import MyflixLogo4 from "../static/MyflixLogo4.png";
 
 const Search = () => {
-  const [results, setResultsState] = useState([]);
+  const [resultsState, setResultsState] = useState([]);
   const [movieState, setMovieState] = useState();
   const [titleState, setTitleState] = useState("");
   const [displayState, setDisplayState] = useState(false);
@@ -48,6 +48,7 @@ const Search = () => {
     setDisplayState(false);
   };
 
+  console.log(resultsState);
   return (
     <div>
       {displayState ? (
@@ -69,14 +70,23 @@ const Search = () => {
               <i class="fa fa-search"></i>
             </button>
           </div>
-        {movieState === undefined ?<div><Modal /></div> : <p></p> }
-     
+
+          {resultsState.length === 0 ? (
+            <div>
+              <Modal /> 
+              <div className="blank-search">
+                <img className="img-fluid" width="650px" src={MyflixLogo4} />
+              </div>
+            </div>
+          ) : (
+            <p></p>
+          )}
 
           <div>
             <Container flex={true}>
-              {results.length % 3 == 0 ? (
+              {resultsState.length % 3 == 0 ? (
                 <Row className="row justify-content-md-center">
-                  {results.map((movie) => (
+                  {resultsState.map((movie) => (
                     <Col className="justify-content-md-center width">
                       <MovieCard
                         key={movie.id}
@@ -88,7 +98,7 @@ const Search = () => {
                 </Row>
               ) : (
                 <Row className="row justify-content-md-center">
-                  {results.map((movie) => (
+                  {resultsState.map((movie) => (
                     <Col className="justify-content-md-center width">
                       <MovieCard
                         key={movie.id}
