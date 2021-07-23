@@ -61,8 +61,7 @@ const ModalIn =() => {
      return(
                 <Modal closeTimeoutMS={1500} className="modalDisplay" isOpen={modalIsOpen} ariaHideApp={false} onRequestClose = {()=>setModalIsOpen(false)} >
                     <Button className="modalButt" onClick={setModalIsOpenToFalse}>Close</Button>
-                    {/* <br/> */}
-                   
+                                 
         
                       {displayState ? <Results2 movieState={movieState} back={back} /> :
                   

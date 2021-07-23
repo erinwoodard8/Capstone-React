@@ -63,10 +63,11 @@ const Results2 = ({movieState, back}) => {
           />
         </div>
 
-        <div
-          className="col-md-7 info-container"
-          //   className="col-md-7 card p-2 border-left-0 img-responsive center-block d-block mx-auto "
-        >
+        <div className="col-md-7 info-container">
+          <button className ="backBtn" onClick={back}>
+          <i class="fa fa-arrow-circle-left fa-cog fa-3x" aria-hidden="true"></i>
+          </button>
+
           <p className="movieTitle">{movieState.title} </p>
           <p className="time">{" "}
             {movieState.year} | {movieState.runtimeMins}{" "}
@@ -88,13 +89,15 @@ const Results2 = ({movieState, back}) => {
           <br></br>
           <button
             type="button"
-            class="btn btn-warning resultsBtn"
+            className="btn btn-warning resultsBtn"
             onClick={saveMovie}
           >
             Add to favorite{" "}
           </button>
 
-          <button onClick={back}>BACK</button>
+          {/* <button onClick={back}>
+            <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i>
+          </button> */}
         </div>
 
         <div className="col-md-1"></div>
