@@ -1,8 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
 @import url('https://allfont.net/allfont.css?fonts=dosis-extrabold');
-
-/* maybe use sans-serif for large text such as links and headings */
 
 .nav{
     background-color: #0e3150; 
@@ -18,10 +15,8 @@
 
 a.nav-link:hover:not(.user) {
   background-color: #FFC0C2;
-  /* IE 9 */
-  transform: scale(1,1.1); /* Standard syntax */
+  transform: scale(1,1.1);
   color: #0e3150 !important;
-  /* height: 9.5vh !important; */
 }
 
 

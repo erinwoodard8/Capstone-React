@@ -3,7 +3,7 @@ import "../styles/search.css";
 import { Row, Col, Container } from "react-bootstrap";
 import MovieCard from "../static/MovieCard";
 import Modal from "../Homepage/Modal";
-import Results from "../Homepage/Results";
+import Results from "../static/Results";
 import MyflixLogo4 from "../static/MyflixLogo4.png";
 
 const Search = () => {
@@ -43,7 +43,6 @@ const Search = () => {
     const movieInfo = await movieResponse.json();
     setMovieState(movieInfo);
     setDisplayState(true);
-    // console.log(movieInfo);
   }
 
   const back = () => {
@@ -54,31 +53,34 @@ const Search = () => {
   return (
     <div>
       {displayState ? (
-        <Results movieState={movieState} back={back} backButtState={backButtState} />
+        <Results
+          movieState={movieState}
+          back={back}
+          backButtState={backButtState}
+        />
       ) : (
         <div>
           <div className="textBox">
             <form>
-
-            <input
-              type="text"
-              id="searchBar"
-              placeholder="Search for a Movie Title..."
-              onChange={handleChange}
+              <input
+                type="text"
+                id="searchBar"
+                placeholder="Search for a Movie Title..."
+                onChange={handleChange}
               />
-            <button
-              onClick={getMovieResults}
-              type="submit"
-              className="submitButt"
+              <button
+                onClick={getMovieResults}
+                type="submit"
+                className="submitButt"
               >
-              <i class="fa fa-search"></i>
-            </button>
-             </form>
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
           </div>
 
           {resultsState.length === 0 ? (
             <div>
-              <Modal /> 
+              <Modal />
               <div className="blank-search">
                 <img className="img-fluid" width="650px" src={MyflixLogo4} />
               </div>

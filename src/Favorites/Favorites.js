@@ -4,7 +4,7 @@ import MovieCard from "../static/MovieCard";
 import "../styles/favorites.css";
 import { Row, Col, Container } from "react-bootstrap";
 import noMovieTrans from "../static/noMovieTrans.png";
-import Results from "../Homepage/Results";
+import Results from "../static/Results";
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
@@ -45,11 +45,6 @@ const Favorites = () => {
     }
   }
   async function removeFavorite(movie) {
-    // console.log(movie);
-    // const userResponse = await fetch("http://localhost:8080/users/login", {
-    //   method: "GET",
-    //   credentials: "include",
-    // });
     const user = userState;
     const favorites = user.favoriteMovies;
     const movieIndex = favorites.indexOf(movie.id);
@@ -77,13 +72,11 @@ const Favorites = () => {
     const movieInfo = await movieResponse.json();
     setMovieState(movieInfo);
     setDisplayState(true);
-    // console.log(movieInfo);
   }
 
   const back = () => {
     setDisplayState(false);
   };
-
 
   return (
     <div>
@@ -93,10 +86,16 @@ const Favorites = () => {
           <img className="img-fluid" src={noMovieTrans} />
         </div>
       ) : displayState ? (
-        <Results movieState={movieState} back={back} backButtState={backButtState} />
+        <Results
+          movieState={movieState}
+          back={back}
+          backButtState={backButtState}
+        />
       ) : (
         <Container flex={true}>
-          <div className="favorites-head">{userState.username}'s Favorite Movies</div>
+          <div className="favorites-head">
+            {userState.username}'s Favorite Movies
+          </div>
           {listState.length % 3 == 0 ? (
             <Row className="row justify-content-md-center">
               {listState.map((movie) => (
