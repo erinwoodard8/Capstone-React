@@ -12,8 +12,9 @@
   font-family: "Domine", serif;
   text-align: center;
   margin:30px;
+  margin-top: 100px;
   padding-bottom: 15px;
-  /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7); */
+  
 }
 
 .displayInfo::after {
@@ -31,6 +32,7 @@
   color: rgb(253, 187, 45);
   font-family: "Domine", serif;
   margin: auto;
+  margin-top: 100px;
   max-width:500px;
   text-align: center;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
