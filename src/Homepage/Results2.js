@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/results.css";
 
-
-const Results2 = ({movieState, back}) => {
-  
+const Results2 = ({ movieState, back, backButtState }) => {
   const [userState, setUserState] = useState({});
-
-
 
   useEffect(() => {
     getUser();
@@ -31,14 +27,13 @@ const Results2 = ({movieState, back}) => {
     if (user.favoriteMovies == null) {
       user.favoriteMovies = [movieId];
     } else {
-       if(user.favoriteMovies.includes(movieId)){
-         alert("You've already favorited this!")
-       } else {  
-      user.favoriteMovies.push(movieId);
-      alert("Movie was added to Favorites!");
-       }
+      if (user.favoriteMovies.includes(movieId)) {
+        alert("You've already favorited this!");
+      } else {
+        user.favoriteMovies.push(movieId);
+        alert("Movie was added to Favorites!");
+      }
     }
-
 
     const response = await fetch("http://localhost:8080/users/favorites", {
       method: "POST",
@@ -62,26 +57,34 @@ const Results2 = ({movieState, back}) => {
           <img
             className="img-fluid"
             max-width="50%"
-            src={movieState.image} alt="img"
-
+            src={movieState.image}
+            alt="img"
           />
         </div>
 
         <div className="col-md-7 info-container">
-          <button className ="backBtn" onClick={back}>
-          <i class="fa fa-arrow-circle-left fa-cog fa-3x" aria-hidden="true"></i>
-          </button>
+          {backButtState ? (
+            <button className="backBtn" onClick={back}>
+              <i
+                class="fa fa-arrow-circle-left fa-cog fa-3x"
+                aria-hidden="true"
+              ></i>
+            </button>
+          ) : (
+            <p></p>
+          )}
 
           <p className="movieTitle">{movieState.title} </p>
-          <p className="time">{" "}
-            {movieState.year} | {movieState.runtimeMins}{" "}
-            min{" "} | {movieState.contentRating}
+          <p className="time">
+            {" "}
+            {movieState.year} | {movieState.runtimeMins} min |{" "}
+            {movieState.contentRating}
           </p>
 
           <div>
             <p className="header-text">Directors:</p>
             <p className="info-text">{movieState.directors}</p>
-            
+
             <p className="header-text">Stars:</p>
             <p className="info-text">{movieState.stars}</p>
             <p className="header-text">Genres:</p>
@@ -98,10 +101,18 @@ const Results2 = ({movieState, back}) => {
           >
             Add to favorite{" "}
           </button>
-
-          {/* <button onClick={back}>
-            <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i>
-          </button> */}
+          {" "}
+          {!backButtState ? (
+            <button
+              type="button"
+              className="btn btn-warning resultsBtn"
+              onClick={back}
+            >
+              Back To In Theaters{" "}
+            </button>
+          ) : (
+            <p></p>
+          )}
         </div>
 
         <div className="col-md-1"></div>
