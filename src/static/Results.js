@@ -26,6 +26,7 @@ const Results = ({ movieState, back, backButtState }) => {
     let user = userState;
     if (user.favoriteMovies == null) {
       user.favoriteMovies = [movieId];
+      alert("Movie was added to Favorites!");
     } else {
       if (user.favoriteMovies.includes(movieId)) {
         alert("You've already favorited this!");
