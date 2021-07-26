@@ -52,8 +52,6 @@ const Results = ({ movieState, back, backButtState }) => {
   return (
     <div className="main-container">
       <div className="row">
-        <div className="col-md-1"></div>
-
         <div className="col-md-3 img-container">
           <img
             className="img-fluid"
@@ -112,8 +110,6 @@ const Results = ({ movieState, back, backButtState }) => {
             <p></p>
           )}
         </div>
-
-        <div className="col-md-1"></div>
       </div>
     </div>
   );

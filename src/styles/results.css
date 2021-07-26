@@ -15,13 +15,13 @@
   padding-bottom: 15px;
 }
 
-.displayInfo::after {
+/* .displayInfo::after {
   border: 3px solid #0e3150;
   padding: 5px;
   content: "";
   clear: both;
   display: table;
-}
+} */
 
 .img-container {
   background-color: transparent;
