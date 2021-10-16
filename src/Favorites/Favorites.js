@@ -19,7 +19,7 @@ const Favorites = () => {
   }, [renderState]);
 
   async function getFavorites() {
-    const response = await fetch("http://localhost:8080/users/login", {
+    const response = await fetch("http://localhost:8080/users/favorites", {
       method: "GET",
       credentials: "include",
     });
