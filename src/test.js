@@ -11,7 +11,7 @@ const Test = () => {
 
   //not actually using this right now, using post response
   const getUser = () => {
-    fetch("http://localhost:8080/users/login", {
+    fetch("https://localhost:8080/users/login", {
       method: "GET",
       credentials: "include",
     })
@@ -22,7 +22,7 @@ const Test = () => {
 
   const postUser = () => {
     let data = userState;
-    fetch("http://localhost:8080/users/post/google", {
+    fetch("https://localhost:8080/users/post/google", {
       method: "POST",
       credentials: "include",
       body: JSON.stringify(data),
@@ -42,7 +42,7 @@ const Test = () => {
     <div>
       <button onClick={getUser}>TEST</button>
       <button onClick={postUser}>POST</button>
-      <a href="http://localhost:8080/oauth2/authorization/google">
+      <a href="https://localhost:8080/oauth2/authorization/google">
         <button>Click me</button>
       </a>
       Welcome {userState.username}
