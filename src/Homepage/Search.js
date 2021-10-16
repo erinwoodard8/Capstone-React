@@ -22,7 +22,8 @@ const Search = () => {
     e.preventDefault();
     let title = titleState;
     const idResponse = await fetch(
-      "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
+      // "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
+      "https://imdb-api.com/en/API/SearchMovie/k_r20x61v5/" + title,
       {
         method: "GET",
       }
@@ -35,7 +36,8 @@ const Search = () => {
   async function getMovieInfo(movie) {
     let movieId = movie.id;
     const movieResponse = await fetch(
-      "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
+      // "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
+    "https://imdb-api.com/en/API/Title/k_r20x61v5/" + movieId,
       {
         method: "GET",
       }

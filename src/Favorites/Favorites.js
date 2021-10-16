@@ -33,7 +33,7 @@ const Favorites = () => {
     } else {
       for (let i = 0; i < favorites.length; i++) {
         const response = await fetch(
-          "https://imdb-api.com/en/API/Title/k_q83az6pl/" + favorites[i],
+          "https://imdb-api.com/en/API/Title/k_r20x61v5/" + favorites[i],
           {
             method: "GET",
           }
@@ -64,7 +64,7 @@ const Favorites = () => {
   async function getMovieInfo(movie) {
     let movieId = movie.id;
     const movieResponse = await fetch(
-      "https://imdb-api.com/en/API/Title/k_q83az6pl/" + movieId,
+      "https://imdb-api.com/en/API/Title/k_r20x61v5/" + movieId,
       {
         method: "GET",
       }
