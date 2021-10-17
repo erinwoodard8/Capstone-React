@@ -5,6 +5,7 @@ import MovieCard from "../static/MovieCard";
 import Modal from "../Homepage/Modal";
 import Results from "../static/Results";
 import MyflixLogo4 from "../static/MyflixLogo4.png";
+import {API}from "../constant.js";
 
 const Search = () => {
   const [resultsState, setResultsState] = useState([]);
@@ -23,7 +24,7 @@ const Search = () => {
     let title = titleState;
     const idResponse = await fetch(
       // "https://imdb-api.com/en/API/SearchMovie/k_q83az6pl/" + title,
-      "https://imdb-api.com/en/API/SearchMovie/k_r20x61v5/" + title,
+      `https://imdb-api.com/en/API/SearchMovie/${API}/` + title,
       {
         method: "GET",
       }
