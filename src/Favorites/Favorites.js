@@ -5,6 +5,7 @@ import "../styles/favorites.css";
 import { Row, Col, Container } from "react-bootstrap";
 import noMovieTrans from "../static/noMovieTrans.png";
 import Results from "../static/Results";
+import {API} from "../constant.js";
 
 const Favorites = () => {
   const [listState, setListState] = useState([]);
@@ -19,7 +20,7 @@ const Favorites = () => {
   }, [renderState]);
 
   async function getFavorites() {
-    const response = await fetch("http://localhost:8080/users/favorites", {
+    const response = await fetch("http://localhost:8080/users/login", {
       method: "GET",
       credentials: "include",
     });
@@ -33,7 +34,7 @@ const Favorites = () => {
     } else {
       for (let i = 0; i < favorites.length; i++) {
         const response = await fetch(
-          "https://imdb-api.com/en/API/Title/k_r20x61v5/" + favorites[i],
+          `https://imdb-api.com/en/API/Title/${API}/` + favorites[i],
           {
             method: "GET",
           }
@@ -64,7 +65,7 @@ const Favorites = () => {
   async function getMovieInfo(movie) {
     let movieId = movie.id;
     const movieResponse = await fetch(
-      "https://imdb-api.com/en/API/Title/k_r20x61v5/" + movieId,
+      `https://imdb-api.com/en/API/Title/${API}/` + movieId,
       {
         method: "GET",
       }
